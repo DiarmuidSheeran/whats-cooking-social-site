@@ -23,3 +23,19 @@ def signup(request):
     context = {'form': form}
     return render(request, 'signup.html', context)
 
+@unauthenticated_user
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            messages.info(request, 'Username OR Password is incorrect')
+    return render(request, 'login.html')
+
+
