@@ -134,6 +134,10 @@ body {
     animation: riseup;
     animation-duration: 1s; 
 }
+.update-btn{
+    background-color: #710280; 
+    border-color: #ffffff;
+}
 
 /*---- Keyframe Animations ----*/
 
