@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
+from .forms import CreateUserForm
 
 # Create your views here.
 @unauthenticated_user
@@ -38,4 +41,7 @@ def user_login(request):
             messages.info(request, 'Username OR Password is incorrect')
     return render(request, 'login.html')
 
+@login_required(login_url='landing')
+def index(request):
+    return render(request, 'index.html', context)
 
