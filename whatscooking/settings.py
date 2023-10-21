@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-from cloudinary_storage.storage import StaticHashedCloudinaryStorage
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -34,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io', 'whats-cooking-socail-site-21a4223c5487.herokuapp.com']
+ALLOWED_HOSTS = ['8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io', 'whats-cooking-socail-site-21a4223c5487.herokuapp.com']
 
 
 # Application definition

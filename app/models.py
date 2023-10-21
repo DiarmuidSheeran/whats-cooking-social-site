@@ -18,7 +18,7 @@ class UserProfile(models.Model):
     def __str__(self):
         return f"{self.fname} {self.lname}"
 
-     def follow(self, user_to_follow):
+    def follow(self, user_to_follow):
         self.following.add(user_to_follow)
 
     def unfollow(self, user_to_unfollow):
