@@ -83,3 +83,56 @@ body {
     animation: rotate-right;
     animation-duration: 2s;
 }
+
+.auth-forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login_btn {
+    background-color: #710280;
+    animation: rotate-left;
+    animation-duration: 1s;  
+}
+
+.input-group-text {
+    background-color: #710280;
+    width: 45px;
+    animation: rotate-right;
+    animation-duration: 1s;
+
+}
+.larger-input {
+    width: 300px;
+    padding-bottom: 60px;
+    animation: rotate-left;
+    animation-duration: 1s;
+
+}
+.smaller-input {
+    width: 300px;
+    animation: rotate-left;
+    animation-duration: 1s;
+
+}
+
+.auth-forms i {
+    color: #ffffff;
+     
+}
+
+.auth-forms input {
+    color: #000000;
+    animation: rotate-left;
+    animation-duration: 1s; 
+}
+
+#form-title {
+    color: #ffffff;
+    animation: riseup;
+    animation-duration: 1s; 
+}
+
+
