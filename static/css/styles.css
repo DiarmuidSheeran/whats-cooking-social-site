@@ -135,4 +135,39 @@ body {
     animation-duration: 1s; 
 }
 
+/*---- Keyframe Animations ----*/
+
+@keyframes rotate-left {
+    from {
+        transform: translate3d(500%, 0, 0);
+}
+    to {
+        transform-origin: 0%;
+}
+}
+@keyframes rotate-right {
+    from {
+        transform: translate3d(-500%, 0, 0);
+}
+    to {
+        transform-origin: 0%;
+}
+}
+@keyframes rise {
+    from {
+        transform: translate3d(0, -500%, 0);
+}
+    to {
+        transform-origin: 0%;
+}
+}
+
+@keyframes riseup {
+    from {
+        transform: translate3d(0, 500%, 0);
+}
+    to {
+        transform-origin: 0%;
+}
+}
 
