@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}User Profile{% endblock %}
+{% block content %}
+<div class="custom-profile">
+    <div class="container content">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" >
+            <h5 class="mt-0"><h3>Hello @{{user.username}}</h3></h5>
+        </div>
+        <div class="card my-4 custom-profile-head">
+            <div class="card-header profile-info" >
+                <div id="profile-header custom-profile-head">
+                    <img class="mr-3 rounded-circle" src="{{ user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <div>
+                    <h6>Posts: {{ posts.count }}</h6>
+                    <h6>Followers: {{ user.userprofile.followers.count }}</h6>
+                    <h6>Following: {{ user.userprofile.following.count }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="bio">
+            <h4>Your Bio:</h4>
+            {% if user.userprofile.bio %}
+            <p>{{ user.userprofile.bio }}</p>
+            {% else %}
+            <p>Update you bio,<br>Let people know about about you.</p>
+            {% endif %}
+            <h4>Your Social Links:</h4>
+            {% if user.userprofile.twitter %}
+            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.twitter}}</a>
+            <br>
+            {% else %}
+            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{% url 'bio' %}">  Add a link to your Twitter</a>
+            <br>
+            {% endif %}
+            {% if user.userprofile.instagram %}
+            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.instagram}}</a>
+            <br>
+            {% else %}
+            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{% url 'bio' %}">  Add a link to your Instagram</a>
+            <br>
+            {% endif %}
+            {% if user.userprofile.facebook %}
+            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.facebook}}</a>
+            {% else %}
+            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{% url 'bio' %}">  Add a link to your Facebook</a>
+            <br>
+            {% endif %} 
+            <br>
+            <br>
+            <a href="{% url 'bio' %}">
+            <button class="btn btn-primary btn-sm update-btn" type="submit">Update Bio</button>
+            </a>     
+        </div>
+    </div>
+</div>
+
+<div class="container content custom-profile-content">
+    <h3>View your Posts:</h3>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4 custom-profile-post">
+            <div class="card mb-4 custom-profile-head">
+                <div class="card-body" id="profile-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <a class="nav-item nav-link active" aria-current="page" href="{% url 'view_post' post.slug %}">
+                    <img src="{{ post.featured_image.url }}" class="card-img-top custom-image" alt="Post Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
