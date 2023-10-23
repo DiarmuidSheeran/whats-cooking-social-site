@@ -244,5 +244,11 @@ def update_info(request):
                }
     return render(request, 'update_info.html', context)
 
-
+@login_required(login_url='landing')
+def delete_account(request):
+    if request.method == 'POST':
+        request.user.delete()
+        logout(request)
+        return redirect('landing')
+    return render(request, 'delete_account.html')
 

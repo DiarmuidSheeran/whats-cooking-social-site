@@ -9,7 +9,7 @@
         <div class="col-md-8 offset-md-2">
             <div class="content">
                 <div class="card my-8">
-                    <div class="card-header settings-card-header-container" id="index-header">
+                    <div class="card-header settings-card-header-container">
                         <img src="{{ request.user.userprofile.profile_pic.url }}" class="settings-profile-picture mr-3 rounded-circle" alt="Profile Picture">
                         <h5 class="mt-0 settings-username">@{{ user.username }}</h5>
                         <div class="form-group">
@@ -46,7 +46,7 @@
                     <div class="card-footer" id="index-footer">
                         <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'update_info' %}" style="text-decoration: none; color: white;">Update Info</a></button>
                         <br>
-                        <button class="btn btn-danger settings-delete-btn" type="submit"><a href="{% url 'delete_account' %}" style="text-decoration: none; color: white;">Delete My Account</a></button>
+                        <button class="btn btn-danger settings-delete-btn" type="submit"><a href="{% url 'index' %}" style="text-decoration: none; color: white;">Delete My Account</a></button>
                     </div>
                 </div>
             </div>
