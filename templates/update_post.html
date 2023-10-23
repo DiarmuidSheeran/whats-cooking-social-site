@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Update Post{% endblock %}
+{% block content %}
+<div class="container content">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="content">
+                <div class="card my-8">
+                    <div class="card-header" id="index-header">
+                        <h3 id="form-title">Edit your Post!</h3>
+                    </div>
+                    <div class="card-body" id="index-body">
+                        <form method="POST" action="{% url 'update_posts' post.slug %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text span"><i class="fa-solid fa-comment" style="color: #ffffff;"></i></span>
+                                </div>
+                                <textarea type="text" class="form-control smaller-input" name="{{ form.title.name }}">{{ post.title }}</textarea>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text span"><i class="fa-solid fa-comment" style="color: #ffffff;"></i></i></span>
+                                </div>
+                                    <textarea type="text" class="form-control larger-input" name="{{ form.content.name }}">{{ post.content }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Post Image" style="object-fit: cover;">
+                                <br>
+                                    <label class="custom-file-upload">
+                                        <input type="file" name="{{ form.featured_image.name }}" class="input-file">
+                                        <i class="fa-regular fa-image" style="color: #ffffff;"></i> Edit Image
+                                    </label>
+                            </div>  
+                            <button class="btn btn btn-primary btn-sm btn-block follow-btn" type="submit">Confirm Edit</button>
+                        </form>
+                    </div>
+                    <div class="card-footer" id="settings-footer">
+                        <form method="POST" action="{% url 'confirm_delete_post' post.slug %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Delete Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
