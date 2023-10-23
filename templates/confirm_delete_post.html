@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delete Post{% endblock %}
+{% block content %}
+<div class="custom-content">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card my-8">
+                    <div class="card-header">
+                        <h2>Delete Post</h2>
+                    </div>
+                    <div class="card-body">
+                        <h4>@{{user.username}}</h4>
+                        <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+                    </div>
+                    <div class="card-footer" id="settings-footer">
+                        <a class="nav-item nav-link active" aria-current="page" href="{% url 'update_posts' post.slug %}"><button class="btn btn btn-primary btn-sm btn-block update-btn" type="submit">Go Back</button></a>
+                        <form method="post" action="{% url 'delete_post' post.slug %}">
+                            {% csrf_token %}
+                            <button class="btn btn btn-primary btn-sm btn-block btn-danger" type="submit">Delete Post</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
