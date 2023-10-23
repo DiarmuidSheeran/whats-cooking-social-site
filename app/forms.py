@@ -38,3 +38,9 @@ class UpdateForm(ModelForm):
     class Meta:
         model = User
         fields = ['username', 'fname', 'lname']
+
+class UpdatePicForm(ModelForm):
+    class Meta:
+        model = UserProfile 
+        fields = ['profile_pic']
+        exclude = ['user']
