@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+{% block title %}Settings{% endblock %}
+{% load static %}
+
+{% block content %}
+<div class="container content">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="content">
+                <div class="card my-8">
+                    <div class="card-header settings-card-header-container" id="index-header">
+                        <img src="{{ request.user.userprofile.profile_pic.url }}" class="settings-profile-picture mr-3 rounded-circle" alt="Profile Picture">
+                        <h5 class="mt-0 settings-username">@{{ user.username }}</h5>
+                        <div class="form-group">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <label class="custom-file-upload-settings">
+                                    <input type="file" name="{{ form.profile_pic.name }}" class="input-file"> Choose Profile Picture
+                                </label>
+                                <input type="submit" value="Upload" class="btn btn-primary update-btn">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-body" id="index-body">
+                        <h2>Account Information</h2>
+                        <br>
+                        <table class="table table-sm" id="settings-table">
+                            <tr>
+                                <th>Username:</th>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td>{{user.email}}</td>
+                            <tr>
+                                <th>First Name:</th>
+                                <td>{{profile.fname}}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td>{{profile.lname}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-footer" id="index-footer">
+                        <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'update_info' %}" style="text-decoration: none; color: white;">Update Info</a></button>
+                        <br>
+                        <button class="btn btn-danger settings-delete-btn" type="submit"><a href="{% url 'delete_account' %}" style="text-decoration: none; color: white;">Delete My Account</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
