@@ -45,3 +45,6 @@ def user_login(request):
 def index(request):
     return render(request, 'index.html')
 
+
+
+
