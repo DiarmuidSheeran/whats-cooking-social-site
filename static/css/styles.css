@@ -184,7 +184,7 @@ body {
     align-items: center;
 }
 
-#index-header a {
+.index-header a {
     text-decoration: none;
     color: #f0ebeb;
     display: flex;
@@ -236,7 +236,12 @@ body {
     text-decoration: none;
     color: rgb(133, 127, 127);
 }
-
+.follow-btn{
+    background-color: #710280; 
+    border-color: #ffffff;
+    width: 100%;
+    margin-top: 5px;
+}
 /*---- Profile Styling ----*/
 .custom-profile {
     padding-top: 50px;
