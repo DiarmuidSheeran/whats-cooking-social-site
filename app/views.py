@@ -3,7 +3,7 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
-from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm
+from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm, UpdateForm, UpdatePicForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -205,5 +205,20 @@ def follow_user(request, username):
 
     return HttpResponseRedirect(reverse('index'))
 
+@login_required(login_url='landing')
+def settings(request):
+    user = request.user
+    profile = UserProfile.objects.get(user=user)
+    form = UpdatePicForm()
+    if request.method=='POST':
+        form = UpdatePicForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('settings')
+    context = {
+               'form': form,
+               'profile': profile
+               }
+    return render(request, 'settings.html', context)
 
 
