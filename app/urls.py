@@ -12,4 +12,5 @@ urlpatterns = [
     path('profile/', views.profile , name="profile"),
     path('bio/', views.bio , name="bio"),
     path('create_post/', views.create_post , name="create_post"),
+    path('post/<slug:slug>', views.view_post , name="view_post"),
 ]

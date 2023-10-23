@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
-from .forms import CreateUserForm, PostForm
+from .forms import CreateUserForm, PostForm, BioForm
 
 # Create your views here.
 @unauthenticated_user
@@ -115,7 +115,15 @@ def create_post(request):
     context = {'form': form}
     return render(request, 'create_post.html', context)
 
-   
+@login_required(login_url='landing')
+def view_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'post.html', context)
 
 
 
