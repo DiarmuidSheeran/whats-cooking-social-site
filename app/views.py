@@ -188,6 +188,22 @@ def post_like(request, slug, *args, **kwargs):
 
     return HttpResponseRedirect(reverse('index'))
 
+@login_required
+def follow_user(request, username):
+    user_to_follow = get_object_or_404(User, username=username)
+
+    followed = False
+
+    if request.user.userprofile.following.filter(id=user_to_follow.id).exists():
+        request.user.userprofile.following.remove(user_to_follow)
+        user_to_follow.userprofile.followers.remove(request.user)
+        followed = False
+    else:
+        request.user.userprofile.following.add(user_to_follow)
+        user_to_follow.userprofile.followers.add(request.user)
+        follwed = True
+
+    return HttpResponseRedirect(reverse('index'))
 
 
 
