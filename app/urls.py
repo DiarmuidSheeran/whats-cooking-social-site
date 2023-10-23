@@ -19,4 +19,5 @@ urlpatterns = [
     path('index/like/<slug:slug>/', views.post_like, name='post_like'),
     path('index/follow/<str:username>/', views.follow_user, name='follow_user'),
     path('settings/', views.settings , name="settings"),
+    path('update_info/', views.update_info , name="update_info"),
 ]
