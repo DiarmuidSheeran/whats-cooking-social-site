@@ -31,3 +31,10 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
+
+class UpdateForm(ModelForm):
+    fname = forms.CharField(max_length=200, required=True)
+    lname = forms.CharField(max_length=200, required=True)
+    class Meta:
+        model = User
+        fields = ['username', 'fname', 'lname']
