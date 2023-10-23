@@ -42,6 +42,11 @@ def user_login(request):
     return render(request, 'login.html')
 
 @login_required(login_url='landing')
+def logoutUser(request):
+    logout(request)
+    return redirect('landing')
+
+@login_required(login_url='landing')
 def index(request):
     return render(request, 'index.html')
 
