@@ -68,21 +68,20 @@ body {
 .custom-landing a {
     color: #ffffff;
 }
-.custom-landing button {
+.signup {
     background-color: #710280;
-    border-color: white;  
-}
-.custom-landing button:hover {
-    background-color: #0275d8;   
-}
-#signup {
+    border-color: white;
     animation: rotate-left;
     animation-duration: 2s;
 }
-#login {
+.login {
+    background-color: #710280;
+    border-color: white;
     animation: rotate-right;
     animation-duration: 2s;
 }
+
+/*---- Sign-Up, Login Template Styles ----*/
 
 .auth-forms {
     display: flex;

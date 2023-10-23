@@ -43,5 +43,5 @@ def user_login(request):
 
 @login_required(login_url='landing')
 def index(request):
-    return render(request, 'index.html', context)
+    return render(request, 'index.html')
 
