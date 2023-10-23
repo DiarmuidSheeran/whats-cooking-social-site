@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Post{% endblock %}
+{% block content %}
+<div class="container h-100">
+	<div class="d-flex justify-content-center h-100">
+		<div class="auth-forms">
+			<div class="d-flex justify-content-center">
+				<h3 id="form-title">Create your Post!</h3>
+			</div>
+			<div class="d-flex justify-content-center form_container">
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text span"><i class="fa-solid fa-comment" style="color: #ffffff;"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Give your post a title" name="{{ form.title.name }}" value="{{ new_post.title }}">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text span"><i class="fa-solid fa-comment" style="color: #ffffff;"></i></i></span>
+                        </div>
+                            <textarea type="text" class="form-control larger-input" placeholder="Give your post some conext." name="{{ form.content.name }}" value="{{ new_post.content }}"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-file-upload">
+                            <input type="file" name="{{ form.featured_image.name }}" class="input-file">
+                            <i class="fa-regular fa-image" style="color: #ffffff;"></i> Upload Image
+                        </label>
+                    </div> 
+                    <div class="card-footer custom-card-footer">
+                        <button class="btn btn-primary btn-sm btn-block update-btn" type="submit">Create Post</button>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
