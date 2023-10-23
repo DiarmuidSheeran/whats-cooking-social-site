@@ -3,7 +3,7 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
-from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm
+from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm
 
 # Create your views here.
 @unauthenticated_user
@@ -141,4 +141,24 @@ def update_posts(request, slug):
     }
     return render(request, 'update_post.html', context)
 
+@login_required(login_url='landing')
+def add_comment_to_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    form = CommentForm()
+    comment = None 
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.user = request.user
+            comment.save()
+        return redirect('index')
+
+    context = {
+               'form': form,
+               'comment': comment
+            }
+    return render(request, 'index.html', context)
 
