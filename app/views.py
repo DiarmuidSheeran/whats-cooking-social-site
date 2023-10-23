@@ -55,6 +55,29 @@ def index(request):
     return render(request, 'index.html', context)
 
 @login_required(login_url='landing')
+def profile(request):
+    posts = Post.objects.filter(user=request.user).order_by('-created_on')
+
+    context = {
+        'posts': posts,
+    }
+
+    return render(request, 'profile.html', context)
+
+def user_profile(request, username):
+    profile_user = get_object_or_404(User, username=username)
+
+    posts = Post.objects.filter(user=profile_user).order_by('-created_on')
+
+    context = {
+        'posts': posts,
+        'profile_user': profile_user,
+    }
+
+    return render(request, 'profile_user.html', context)
+
+
+@login_required(login_url='landing')
 def create_post(request):
     user = request.user
     form = PostForm()
@@ -68,6 +91,8 @@ def create_post(request):
 
     context = {'form': form}
     return render(request, 'create_post.html', context)
+
+   
 
 
 
