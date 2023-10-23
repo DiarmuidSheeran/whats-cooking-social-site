@@ -221,4 +221,28 @@ def settings(request):
                }
     return render(request, 'settings.html', context)
 
+@login_required(login_url='landing')
+def update_info(request):
+    user = request.user
+    profile = UserProfile.objects.get(user=user)
+    if request.method == 'POST':
+        form = UpdateForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.fname = form.cleaned_data.get('fname')
+            profile.lname = form.cleaned_data.get('lname')
+            user.username = form.cleaned_data.get('username')
+            profile.save()
+            user.save()
+            return redirect('settings')
+    else:
+        form = UpdateForm(instance=profile)
+
+    context = {
+               'form': form,
+               'profile': profile,
+               }
+    return render(request, 'update_info.html', context)
+
+
 
