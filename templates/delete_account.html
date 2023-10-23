@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delete Account{% endblock %}
+{% block content %}
+<div class="custom-content">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card my-8">
+                    <div class="card-header">
+                        <h2>Delete Account</h2>
+                    </div>
+                    <div class="card-body">
+                        <h4>@{{user.username}}</h4>
+                        <p>We will be sorry to see you go.</p>
+                        <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+                    </div>
+                    <button class="btn btn btn-primary btn-sm btn-block update-btn" type="submit"><a class="nav-link" href="{% url 'settings' %}" style="text-decoration: none; color: white;">Go Back</a></button>
+                    <div class="card-footer" id="settings-footer">
+                        <form method="post">
+                            {% csrf_token %}
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
