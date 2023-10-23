@@ -7,6 +7,15 @@ body {
     background-color: #000000;
     color: White;
 }
+.card-body {
+    background-color: #000000;
+}
+.card-header {
+    background-color: #000000; 
+}
+.card-footer {
+    background-color: #000000;
+}
 .content {
     margin-top: 30px;
     padding: 20px;
@@ -163,6 +172,69 @@ body {
 .update-btn{
     background-color: #710280; 
     border-color: #ffffff;
+}
+/*---- Index Page Styles ----*/
+
+.index-body{
+    border-top: #f0ebeb;
+    text-align: center;
+}
+.index-header{
+    display: flex;
+    align-items: center;
+}
+
+#index-header a {
+    text-decoration: none;
+    color: #f0ebeb;
+    display: flex;
+    align-items: center;
+}
+.update-btn{
+    background-color: #710280; 
+    border-color: #ffffff;
+}
+.like-btn {
+    background-color: #710280;
+    border-width: 1px;
+    border-color: #ffffff;
+    margin-bottom: 10px;
+}
+.like-btn i {
+    padding-right: 5px;
+}
+.like-btn:hover {
+    background-color: #000000;
+}
+.post-date {
+    margin-left: 20px;
+    color: rgb(133, 127, 127);
+}
+.comment-section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+
+}
+.comment-section ul li {
+   list-style: none;
+}
+
+.comment-section li {
+    padding-bottom: 20px;
+}
+
+.comment-btn {
+    background-color: #710280; 
+    border-color: #ffffff;
+    width: 50%;
+}
+
+.view-more {
+    text-decoration: none;
+    color: rgb(133, 127, 127);
 }
 
 /*---- Profile Styling ----*/

@@ -9,7 +9,7 @@
             {% for post in posts %}
             <div class="content">
                 <div class="card my-8">
-                    <div class="card-header" id="index-header">
+                    <div class="card-header index-header">
                         
                         <a href="{% url 'profile' %}">
                             <img class="mr-3 rounded-circle" src="{{ post.user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
@@ -19,13 +19,13 @@
                             <button class="btn btn-primary btn-sm follow-btn" type="submit">Edit </button>
                         </a>
                     
-                    <div class="card-body" id="index-body">
+                    <div class="card-body index-body">
                         <a class="nav-item nav-link active" aria-current="page" href="{% url 'view_post' post.slug %}">
                         <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Post Image" style="object-fit: cover;">
                         </a>
                     </div>
 
-                    <div class="card-footer" id="index-footer">
+                    <div class="card-footer">
                         <form class="d-inline like-form" action="{% url 'post_like' slug=post.slug %}" method="POST" data-post-slug="{{ post.slug }}">
                             {% csrf_token %}
                             {% if request.user in post.likes.all %}
