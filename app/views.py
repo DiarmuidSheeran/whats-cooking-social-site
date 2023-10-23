@@ -76,6 +76,29 @@ def user_profile(request, username):
 
     return render(request, 'profile_user.html', context)
 
+def bio(request):
+    user = request.user
+    profile = UserProfile.objects.get(user=user)
+    if request.method == 'POST':
+        form = BioForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.bio = form.cleaned_data.get('bio')
+            profile.twitter = form.cleaned_data.get('twitter')
+            profile.facebook = form.cleaned_data.get('facebook')
+            profile.instagram = form.cleaned_data.get('instagram')
+            profile.save()
+            user.save()
+            return redirect('profile')
+    else:
+        form = BioForm(instance=profile)
+
+    context = {
+               'form': form,
+               'profile': profile,
+               }
+
+    return render(request, 'bio.html', context)
 
 @login_required(login_url='landing')
 def create_post(request):
