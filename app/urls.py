@@ -18,4 +18,5 @@ urlpatterns = [
     path('index/<slug:slug>/', views.add_comment_to_post, name='add_comment_to_post'),
     path('index/like/<slug:slug>/', views.post_like, name='post_like'),
     path('index/follow/<str:username>/', views.follow_user, name='follow_user'),
+    path('settings/', views.settings , name="settings"),
 ]
