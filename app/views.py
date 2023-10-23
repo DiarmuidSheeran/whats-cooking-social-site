@@ -142,6 +142,15 @@ def update_posts(request, slug):
     return render(request, 'update_post.html', context)
 
 @login_required(login_url='landing')
+def confirm_delete_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    context = {'post': post}
+    
+    return render(request, 'confirm_delete_post.html', context)
+
+
+@login_required(login_url='landing')
 def add_comment_to_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm()
