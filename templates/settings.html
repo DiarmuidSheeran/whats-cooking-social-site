@@ -22,7 +22,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="card-body" id="index-body">
+                    <div class="card-body">
                         <h2>Account Information</h2>
                         <br>
                         <table class="table table-sm" id="settings-table">
@@ -43,10 +43,10 @@
                             </tr>
                         </table>
                     </div>
-                    <div class="card-footer" id="index-footer">
+                    <div class="card-footer">
                         <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'update_info' %}" style="text-decoration: none; color: white;">Update Info</a></button>
                         <br>
-                        <button class="btn btn-danger settings-delete-btn" type="submit"><a href="{% url 'index' %}" style="text-decoration: none; color: white;">Delete My Account</a></button>
+                        <button class="btn btn-danger settings-delete-btn" type="submit"><a href="{% url 'delete_account' %}" style="text-decoration: none; color: white;">Delete My Account</a></button>
                     </div>
                 </div>
             </div>
