@@ -20,9 +20,14 @@ class BioForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['bio', 'twitter', 'instagram', 'facebook']
-        
+
 class UpdatePostForm(ModelForm):
 
     class Meta:
         model = Post
         fields = ['title', 'content', 'featured_image']
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
