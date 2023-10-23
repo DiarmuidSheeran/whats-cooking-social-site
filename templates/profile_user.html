@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="custom-profile">
+    <div class="container content">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" >
+            <h5 class="mt-0"><h3>{{profile_user.username}}'s Profile</h3></h5>
+        </div>
+        <div class="card my-4 custom-profile-head">
+            <div class="card-header profile-info">
+                <div id="profile-header custom-profile-head">
+                    <img class="mr-3 rounded-circle" src="{{ profile_user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 100px; height: 100px; object-fit: cover;">
+                </div>
+                <div>
+                    <h6>Posts: {{ posts.count }}</h6>
+                    <h6>Followers: {{ profile_user.userprofile.followers.count }}</h6>
+                    <h6>Following: {{ profile_user.userprofile.following.count }}</h6>
+                </div>
+            </div>
+            <form method="post" action="{% url 'follow_user' username=profile_user.username %}">
+                {% csrf_token %}
+                {% if profile_user in request.user.userprofile.following.all %}
+                <button class="btn btn-primary btn-sm follow-btn" type="submit">Unfollow</button>
+                {% else %}
+                <button class="btn btn-primary btn-sm end follow-btn" type="submit">Follow</button>
+                {% endif %}
+            </form>
+        </div>
+        <div class="bio">
+            <h5>{{ profile_user.username }}'s Bio:</h5>
+            {% if profile_user.userprofile.bio %}
+            <p>{{ profile_user.userprofile.bio }}</p>
+            {% else %}
+            <p>No bio available: <br>{{ profile_user.username }} is keeping a low profile!</p>
+            {% endif %}
+            {% if profile_user.userprofile.twitter or profile_user.userprofile.instagram or profile_user.userprofile.facebook %}
+            <h6>Follow {{profile_user.username}} on:</h6>
+            {% endif %}
+            {% if profile_user.userprofile.twitter %}
+            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ profile_user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.twitter}}</a>
+            <br>
+            {% endif %}
+            {% if profile_user.userprofile.instagram %}
+            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ profile_user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.instagram}}</a>
+            <br>
+            {% endif %}
+            {% if profile_user.userprofile.facebook %}
+            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ profile_user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.facebook}}</a>
+            {% endif %}      
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h3>@{{profile_user.username}}'s Posts</h3>
+</div>
+  
+<div class="container content custom-profile-content">
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-4 custom-profile-post">
+            <div class="card mb-4 custom-profile-head">
+                <div class="card-body" id="profile-body">
+                    <a class="nav-item nav-link active" aria-current="page" href="{% url 'view_post' post.slug %}">
+                    <img src="{{ post.featured_image.url }}" class="card-img-top custom-image" alt="Post Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
