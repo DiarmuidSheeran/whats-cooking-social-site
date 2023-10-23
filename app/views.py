@@ -48,7 +48,11 @@ def logoutUser(request):
 
 @login_required(login_url='landing')
 def index(request):
-    return render(request, 'index.html')
+    posts = Post.objects.all().order_by('-created_on')
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'index.html', context)
 
 @login_required(login_url='landing')
 def create_post(request):
