@@ -15,3 +15,8 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'content', 'featured_image']
+
+class BioForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['bio', 'twitter', 'instagram', 'facebook']
