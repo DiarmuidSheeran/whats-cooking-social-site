@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
 from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 @unauthenticated_user
@@ -170,4 +171,21 @@ def add_comment_to_post(request, slug):
                'comment': comment
             }
     return render(request, 'index.html', context)
+
+@login_required
+def post_like(request, slug, *args, **kwargs):
+    post = get_object_or_404(Post, slug=slug)
+
+    liked = False
+
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+
+
+    return HttpResponseRedirect(reverse('index'))
+
 
