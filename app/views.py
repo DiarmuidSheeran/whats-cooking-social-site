@@ -172,7 +172,7 @@ def add_comment_to_post(request, slug):
             }
     return render(request, 'index.html', context)
 
-@login_required
+@login_required(login_url='landing')
 def post_like(request, slug, *args, **kwargs):
     post = get_object_or_404(Post, slug=slug)
 
@@ -187,5 +187,7 @@ def post_like(request, slug, *args, **kwargs):
 
 
     return HttpResponseRedirect(reverse('index'))
+
+
 
 
