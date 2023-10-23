@@ -20,4 +20,5 @@ urlpatterns = [
     path('index/follow/<str:username>/', views.follow_user, name='follow_user'),
     path('settings/', views.settings , name="settings"),
     path('update_info/', views.update_info , name="update_info"),
+    path('delete_account/', views.delete_account, name='delete_account'),
 ]
