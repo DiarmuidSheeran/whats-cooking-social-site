@@ -7,7 +7,12 @@ body {
     background-color: #000000;
     color: White;
 }
-
+.content {
+    margin-top: 30px;
+    padding: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+}
 .custom-file-upload {
     display: inline-block;
     padding: 6px 12px;
@@ -160,6 +165,43 @@ body {
     border-color: #ffffff;
 }
 
+/*---- Profile Styling ----*/
+.custom-profile {
+    padding-top: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border: none;
+
+}
+.custom-profile-head {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #000000;
+}
+.profile-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+}
+.profile-info h6 {
+    margin-left: 30px;
+}
+.bio {
+    border-bottom: #ffffff;
+}
+.bio a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.custom-profile-content {
+    margin-bottom: 100px;
+    border: none;
+}
 /*---- Keyframe Animations ----*/
 
 @keyframes rotate-left {
