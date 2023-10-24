@@ -5,7 +5,7 @@
 <div class="custom-profile">
     <div class="container content">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" >
-            <h5 class="mt-0"><h3>{{profile_user.username}}'s Profile</h3></h5>
+            <h5 class="mt-0"><h3>@{{profile_user.username}}'s Profile</h3></h5>
         </div>
         <div class="card my-4 custom-profile-head">
             <div class="card-header profile-info">
@@ -28,7 +28,7 @@
             </form>
         </div>
         <div class="bio">
-            <h5>{{ profile_user.username }}'s Bio:</h5>
+            <h5>@{{ profile_user.username }}'s Bio:</h5>
             {% if profile_user.userprofile.bio %}
             <p>{{ profile_user.userprofile.bio }}</p>
             {% else %}

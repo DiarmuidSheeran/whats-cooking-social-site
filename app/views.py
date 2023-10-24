@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
 from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm, UpdateForm, UpdatePicForm
 from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 @unauthenticated_user

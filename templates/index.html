@@ -80,7 +80,7 @@
                                     <li>No comments yet.</li>
                                 {% endfor %}
                             
-                                {% if post.comments.count > 3 %}
+                                {% if post.comments.count > 2 %}
                                 <li><small><a href="{% url 'view_post' post.slug %}" class="view-more">View More...</a></small></li>
                                 {% endif %}
                             </ul>

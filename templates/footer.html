@@ -2,11 +2,11 @@
 <footer>
     <div class="custom-footer text-center">
         <div class="container-fluid ">
-            <a class="navbar-brand footer-nav" href="{% url 'index' %}"></a>
+            <a class="navbar-brand footer-nav" href="{% url 'profile' %}"><img src="{{request.user.userprofile.profile_pic.url}}" alt="placeholder" class="mr-3 rounded-circle" style="width: 40px; height: 40px;"></a>
             <a class="navbar-brand footer-nav" href="{% url 'create_post' %}">
                 <i class="fa-solid fa-square-plus fa-beat fa-xl" style="color: #ffffff;"></i>
             </a>
-            <a class="navbar-brand footer-nav" href="{% url 'index' %}"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></a>
+            <a class="navbar-brand footer-nav" href="{% url 'search' %}"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></a>
         </div>
         <div>
             <p>© 2023 Copyright: Diarmuid Sheeran</p>
