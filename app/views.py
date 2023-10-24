@@ -280,3 +280,34 @@ def search_users(request):
     context = {'results': results}
     return render(request, 'search_results.html', context)
 
+def get_recipe_data(query):
+    api_id = os.environ.get("EDAMAM_API_ID")
+    api_key = os.environ.get("EDAMAM_API_KEY")
+
+    url = "https://api.edamam.com/search"
+    params = {
+        "q": query,
+        "app_id": api_id,
+        "app_key": api_key,
+    }
+
+    response = requests.get(url, params=params)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return None
+
+def recipe_search(request):
+    query = request.GET.get('q', '') 
+    if query:
+        recipes = get_recipe_data(query)
+    else:
+        recipes = None
+
+    context = {'recipes': recipes, 'query': query}
+    
+    return render(request, 'recipes.html', context)
+
+
+ path('recipes/', views.recipe_search, name='recipe_search'),
