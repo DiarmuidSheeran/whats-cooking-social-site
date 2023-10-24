@@ -197,7 +197,7 @@ def post_like(request, slug, *args, **kwargs):
         liked = True
 
 
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('view_post', args=[post.slug]))
 
 @login_required
 def follow_user(request, username):
