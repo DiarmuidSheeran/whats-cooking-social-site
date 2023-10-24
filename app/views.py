@@ -252,3 +252,6 @@ def delete_account(request):
         return redirect('landing')
     return render(request, 'delete_account.html')
 
+@login_required(login_url='landing')
+def search(request):
+    return render(request, 'search.html')
