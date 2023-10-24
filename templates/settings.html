@@ -18,28 +18,27 @@
                                 <label class="custom-file-upload-settings">
                                     <input type="file" name="{{ form.profile_pic.name }}" class="input-file"> Choose Profile Picture
                                 </label>
-                                <input type="submit" value="Upload" class="btn btn-primary update-btn">
+                                <input type="submit" value="Upload" class="btn btn-primary btn-sm update-btn">
                             </form>
                         </div>
                     </div>
                     <div class="card-body">
                         <h2>Account Information</h2>
-                        <br>
-                        <table class="table table-sm" id="settings-table">
+                        <table class="table table-sm settings-table">
                             <tr>
-                                <th>Username:</th>
-                                <td>{{user.username}}</td>
+                                <th style="border: none;">Username:</th>
+                                <td style="border: none;">{{user.username}}</td>
                             </tr>
                             <tr>
-                                <th>Email:</th>
-                                <td>{{user.email}}</td>
+                                <th style="border: none;">Email:</th>
+                                <td style="border: none;">{{user.email}}</td>
                             <tr>
-                                <th>First Name:</th>
-                                <td>{{profile.fname}}</td>
+                                <th style="border: none;">First Name:</th>
+                                <td style="border: none;">{{profile.fname}}</td>
                             </tr>
                             <tr>
-                                <th>Last Name:</th>
-                                <td>{{profile.lname}}</td>
+                                <th style="border: none;">Last Name:</th>
+                                <td style="border: none;">{{profile.lname}}</td>
                             </tr>
                         </table>
                     </div>

@@ -295,11 +295,11 @@ body {
     border-radius: 50%;
 }
 
-#settings-table {
+.settings-table {
     color: #ffffff;
     border: none;
 }
-#settings-footer {
+.settings-footer {
     background-color: #000000;
     display: flex;
     flex-direction: column;
