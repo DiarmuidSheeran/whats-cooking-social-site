@@ -22,4 +22,5 @@ urlpatterns = [
     path('update_info/', views.update_info , name="update_info"),
     path('delete_account/', views.delete_account, name='delete_account'),
     path('search/', views.search_users, name='search_results'),
+    path('search/users', views.search, name='search'),
 ]

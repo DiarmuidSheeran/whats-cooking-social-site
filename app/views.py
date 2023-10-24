@@ -255,3 +255,14 @@ def delete_account(request):
 @login_required(login_url='landing')
 def search(request):
     return render(request, 'search.html')
+
+@login_required(login_url='landing')
+def search_users(request):
+    query = request.GET.get('query')
+    results = User.objects.all() 
+    
+    if query:
+        results = results.filter(username__icontains=query)
+    
+    context = {'results': results}
+    return render(request, 'search_results.html', context)
