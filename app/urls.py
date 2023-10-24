@@ -24,4 +24,5 @@ urlpatterns = [
     path('delete_account/', views.delete_account, name='delete_account'),
     path('search/', views.search_users, name='search_results'),
     path('search/users', views.search, name='search'),
+    path('recipes/', views.recipe_search, name='recipe_search'),
 ]

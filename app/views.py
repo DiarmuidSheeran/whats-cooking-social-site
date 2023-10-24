@@ -6,6 +6,8 @@ from .decorators import unauthenticated_user
 from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm, UpdateForm, UpdatePicForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+import os
+import requests
 
 # Create your views here.
 @unauthenticated_user
@@ -277,3 +279,4 @@ def search_users(request):
     
     context = {'results': results}
     return render(request, 'search_results.html', context)
+
