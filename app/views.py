@@ -58,7 +58,8 @@ def index(request):
 
 @login_required(login_url='landing')
 def follow_feed(request):
-    posts = Post.objects.all().order_by('-created_on')
+    following_users = request.user.userprofile.following.all()
+    posts = Post.objects.filter(user__in=following_users).order_by('-created_on')
 
     context = {
         'posts': posts,

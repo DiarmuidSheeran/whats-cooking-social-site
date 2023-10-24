@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="container content">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for post in posts %}
+            <div class="content">
+                <div class="card my-8">
+                    <div class="card-header index-header">
+                        {% if request.user != post.user %}
+                        <a href="{% url 'user_profile' username=post.user.username %}">
+                            <img class="mr-3 rounded-circle" src="{{ post.user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                            <h5 class="mt-0">{{ post.user.username }}</h5>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'profile' %}">
+                            <img class="mr-3 rounded-circle" src="{{ post.user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                            <h5 class="mt-0">{{ post.user.username }}</h5>
+                        </a>
+                        <a class="nav-item nav-link active" aria-current="page" href="{% url 'update_posts' post.slug %}">
+                            <button class="btn btn-primary btn-sm follow-btn" type="submit">Edit </button>
+                        </a>
+                        {% endif %}
+        
+                        <div class="ml-auto">
+                            {% if request.user != post.user %}
+                                
+                            <form method="post" action="{% url 'follow_user' username=post.user.username %}">
+                                {% csrf_token %}
+                                {% if  post.user in request.user.userprofile.following.all %}
+                                <button class="btn btn-primary btn-sm follow-btn" type="submit">Unfollow</button>
+                                {% else %}
+                                <button class="btn btn-primary btn-sm end follow-btn" type="submit">Follow</button>
+                                {% endif %}
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="card-body index-body">
+                        <a class="nav-item nav-link active" aria-current="page" href="{% url 'view_post' post.slug %}">
+                        <img src="{{ post.featured_image.url }}" class="card-img-top" alt="Post Image" style="object-fit: cover;">
+                        </a>
+                    </div>
+
+                    <div class="card-footer">
+                        <form class="d-inline like-form" action="{% url 'post_like' slug=post.slug %}" method="POST" data-post-slug="{{ post.slug }}">
+                            {% csrf_token %}
+                            {% if request.user in post.likes.all %}
+                            <button type="submit" name="like" value="{{post.slug}}" class="btn-like btn btn-primary like-button like-btn" data-like-action="unlike">
+                                <i class="fa-solid fa-heart fa-sm" style="color: #cc2b5e;"></i>{{ post.number_of_likes }}
+                            </button>
+                            {% else %}
+                            <button type="submit" name="like" value="{{post.slug}}" class="btn-like btn btn-primary like-button like-btn" data-like-action="like">
+                                <i class="fa-solid fa-heart fa-sm" style="color: #f0ebeb;"></i>{{ post.number_of_likes }}
+                            </button>
+                            {% endif %}
+                        </form>
+                        <small class="post-date">Posted on {{ post.created_on|date }}</small>
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content }}</p>
+                       
+                        <div class="comment-section">
+                            <h6>Comments</h6>
+                            <ul>
+                                {% for comment in post.comments.all|slice:":2" %}
+                                {% if request.user != comment.user %}
+                                <a href="{% url 'user_profile' username=comment.user.username %}">
+                                <small><li>@{{ comment.user.username }}</a>
+                                {% else %}
+                                <a href="{% url 'profile' %}">
+                                    <small><li>@{{ comment.user.username }}</a>
+                                {% endif %}
+                                    {{ comment.created_on|date }}
+                                <br> {{ comment.content }} </li></small>
+                                {% empty %}
+                                    <li>No comments yet.</li>
+                                {% endfor %}
+                            
+                                {% if post.comments.count > 2 %}
+                                <li><small><a href="{% url 'view_post' post.slug %}" class="view-more">View More...</a></small></li>
+                                {% endif %}
+                            </ul>
+                        </div> 
+                        <form method="post" action="{% url 'add_comment_to_post' slug=post.slug %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Leave a comment" name="content" value="{{ form.content.value }}">
+                            </div>
+                            <button class="btn btn btn-primary btn-sm btn-block comment-btn"  type="submit">Comment</button>
+                        </form>    
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
