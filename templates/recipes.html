@@ -1,3 +1,37 @@
-
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Recipes{% endblock %}
+{% block content %}
+<div class="container custom-search">
+    <h3>Recipe Search</h3>
+    <form class="form-inline my-2 my-lg-0" method="get">
+        <input class="form-control mr-sm-2" type="text" name="q" value="{{ query }}" placeholder="Search for recipes" aria-label="Search-for-recipes">
+        <button class="btn btn btn-primary btn-sm btn-block search-btn" type="submit">Search</button>
+    </form>
+    <div class="container-search">
+        <h1>Search Results</h1>
+        {% if recipes %}
+            <div class="row">
+                {% for recipe in recipes.hits %}
+                    <div class="col-md-4">
+                        <div class="user-info">
+                            <a href="{{ recipe.recipe.url }}">
+                                <h2>{{ recipe.recipe.label }}</h2>
+                                <img src="{{ recipe.recipe.image }}" alt="Recipe Image" class="recipe-image img-fluid">
+                            </a>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                    <div class="row">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No recipes found.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
 
 

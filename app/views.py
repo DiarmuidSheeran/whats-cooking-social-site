@@ -310,4 +310,4 @@ def recipe_search(request):
     return render(request, 'recipes.html', context)
 
 
- path('recipes/', views.recipe_search, name='recipe_search'),
+    path('recipes/', views.recipe_search, name='recipe_search'),
