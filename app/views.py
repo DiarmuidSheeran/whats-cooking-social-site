@@ -57,6 +57,15 @@ def index(request):
     return render(request, 'index.html', context)
 
 @login_required(login_url='landing')
+def follow_feed(request):
+    posts = Post.objects.all().order_by('-created_on')
+
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'follow_feed.html', context)
+
+@login_required(login_url='landing')
 def profile(request):
     posts = Post.objects.filter(user=request.user).order_by('-created_on')
 
