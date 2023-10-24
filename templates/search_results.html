@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+
+
+<div class="container custom-content">
+    <h3>Search for other Users:</h3>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search_results' %}">
+        <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search Users" aria-label="Search">
+        <button class="btn btn btn-primary btn-sm btn-block search-btn" type="submit">Search</button>
+    </form>
+
+    <div class="container-search">
+        <h1>Search Results</h1>
+        <div class="results-container">
+            {% for user in results %}
+                <div class="user-info">
+                    <h5><a href="{% url 'user_profile' user.username %}"><img class="mr-3 rounded-circle" src="{{ user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">{{ user.username }}</a></h5>
+                </div>
+            {% empty %}
+                <p>No users found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
