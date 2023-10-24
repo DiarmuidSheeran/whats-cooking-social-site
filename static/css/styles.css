@@ -328,6 +328,33 @@ body {
     background-color: #0275d8;
 }
 
+/*---- Search Page styles ----*/
+
+.custom-search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 25px;
+    padding-bottom: 120px;
+}
+
+.search-btn{
+    background-color: #710280; 
+    border-color: #ffffff;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.results-container {
+    text-align: left;
+    margin-left: 10px;
+}
+.container-search {
+    text-align: center;
+}
+
 /*---- Keyframe Animations ----*/
 
 @keyframes rotate-left {
