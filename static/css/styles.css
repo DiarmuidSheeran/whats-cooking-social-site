@@ -335,9 +335,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin-top: 100px;
-    padding-bottom: 120px;
+    padding: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .search-btn{
