@@ -336,7 +336,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 50px;
+    margin-top: 100px;
     padding-bottom: 120px;
 }
 
@@ -353,8 +353,37 @@ body {
 }
 .container-search {
     text-align: center;
+
 }
 
+/*---- Recipe Page styles ----*/
+
+.content-recipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.search-btn-recipe{
+    background-color: #710280; 
+    border-color: #ffffff;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.container-search-recipe {
+    text-align: center;
+
+}
+.recipe-link a {
+    text-decoration: none;
+    color: #ffffff;
+}
 /*---- Keyframe Animations ----*/
 
 @keyframes rotate-left {
