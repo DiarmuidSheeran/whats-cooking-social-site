@@ -27,13 +27,12 @@
         
                         <div class="ml-auto">
                             {% if request.user != post.user %}
-                                
-                            <form method="post" action="{% url 'follow_user' username=post.user.username %}">
+                            <form class="follow-form" method="POST" action="{% url 'follow_user' username=post.user.username %}" data-username="{{ post.user.username }}">
                                 {% csrf_token %}
                                 {% if  post.user in request.user.userprofile.following.all %}
-                                <button class="btn btn-primary btn-sm follow-btn" type="submit">Unfollow</button>
+                                <button class="btn btn-primary btn-sm follow-btn" name="follow" value="{{ post.user.username }}" type="button" data-follow-action="unfollow">Unfollow</button>
                                 {% else %}
-                                <button class="btn btn-primary btn-sm end follow-btn" type="submit">Follow</button>
+                                <button class="btn btn-primary btn-sm end follow-btn" name="follow" type="button" value="{{ post.user.username }}" data-follow-action="follow">Follow</button>
                                 {% endif %}
                             </form>
                             {% endif %}

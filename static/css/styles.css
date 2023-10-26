@@ -243,12 +243,7 @@ body {
     width: 100%;
     margin-top: 5px;
 }
-.unfollow-btn{
-    background-color: #000000; 
-    border-color: #ffffff;
-    width: 100%;
-    margin-top: 5px;
-}
+
 
 /*---- Profile Styling ----*/
 .custom-profile {
