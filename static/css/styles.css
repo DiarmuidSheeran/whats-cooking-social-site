@@ -199,6 +199,7 @@ body {
     border-width: 1px;
     border-color: #ffffff;
     margin-bottom: 10px;
+    transition: background-color 0.3s;
 }
 .like-btn i {
     padding-right: 5px;
@@ -242,6 +243,7 @@ body {
     width: 100%;
     margin-top: 5px;
 }
+
 /*---- Profile Styling ----*/
 .custom-profile {
     padding-top: 50px;
