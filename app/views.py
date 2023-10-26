@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 import os
 import requests
+from django.http import JsonResponse
 
 # Create your views here.
 @unauthenticated_user
@@ -199,7 +200,7 @@ def post_like(request, slug, *args, **kwargs):
         liked = True
 
 
-    return HttpResponseRedirect(reverse('view_post', args=[post.slug]))
+    return JsonResponse({ 'likes_count': post.likes.count(), 'liked': liked})
 
 @login_required
 def follow_user(request, username):
