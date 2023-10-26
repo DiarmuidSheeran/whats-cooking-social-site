@@ -19,39 +19,73 @@
                 </div>
             </div>
         </div>
-        <div class="bio">
-            <h4>Your Bio:</h4>
-            {% if user.userprofile.bio %}
-            <p>{{ user.userprofile.bio }}</p>
-            {% else %}
-            <p>Update you bio,<br>Let people know about about you.</p>
-            {% endif %}
-            <h4>Your Social Links:</h4>
-            {% if user.userprofile.twitter %}
-            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.twitter}}</a>
-            <br>
-            {% else %}
-            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{% url 'bio' %}">  Add a link to your Twitter</a>
-            <br>
-            {% endif %}
-            {% if user.userprofile.instagram %}
-            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.instagram}}</a>
-            <br>
-            {% else %}
-            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{% url 'bio' %}">  Add a link to your Instagram</a>
-            <br>
-            {% endif %}
-            {% if user.userprofile.facebook %}
-            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.facebook}}</a>
-            {% else %}
-            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{% url 'bio' %}">  Add a link to your Facebook</a>
-            <br>
-            {% endif %} 
-            <br>
-            <br>
-            <a href="{% url 'bio' %}">
-            <button class="btn btn-primary btn-sm update-btn" type="submit">Update Bio</button>
-            </a>     
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="bio">
+                        <h4>Your Bio:</h4>
+                        {% if user.userprofile.bio %}
+                        <p>{{ user.userprofile.bio }}</p>
+                        {% else %}
+                        <p>Update you bio,<br>Let people know about about you.</p>
+                        {% endif %}
+                        <h4>Your Social Links:</h4>
+                        {% if user.userprofile.twitter %}
+                        <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.twitter}}</a>
+                        <br>
+                        {% else %}
+                        <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{% url 'bio' %}">  Add a link to your Twitter</a>
+                        <br>
+                        {% endif %}
+                        {% if user.userprofile.instagram %}
+                        <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.instagram}}</a>
+                        <br>
+                        {% else %}
+                        <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{% url 'bio' %}">  Add a link to your Instagram</a>
+                        <br>
+                        {% endif %}
+                        {% if user.userprofile.facebook %}
+                        <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{user.userprofile.facebook}}</a>
+                        {% else %}
+                        <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{% url 'bio' %}">  Add a link to your Facebook</a>
+                        <br>
+                        {% endif %} 
+                        <br>
+                        <br>
+                        <a href="{% url 'bio' %}">
+                        <button class="btn btn-primary btn-sm update-btn" type="submit">Update Bio</button>
+                        </a>     
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Followers
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                            <ul class="list-group">
+                                {% for follower in user.userprofile.followers.all %}
+                                    <li class="list-group-item">{{ follower.username }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Following
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                            <ul class="list-group">
+                                {% for following in user.userprofile.following.all %}
+                                    <li class="list-group-item">{{ following.username }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

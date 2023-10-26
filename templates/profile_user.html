@@ -27,27 +27,61 @@
                 {% endif %}
             </form>
         </div>
-        <div class="bio">
-            <h5>@{{ profile_user.username }}'s Bio:</h5>
-            {% if profile_user.userprofile.bio %}
-            <p>{{ profile_user.userprofile.bio }}</p>
-            {% else %}
-            <p>No bio available: <br>{{ profile_user.username }} is keeping a low profile!</p>
-            {% endif %}
-            {% if profile_user.userprofile.twitter or profile_user.userprofile.instagram or profile_user.userprofile.facebook %}
-            <h6>Follow {{profile_user.username}} on:</h6>
-            {% endif %}
-            {% if profile_user.userprofile.twitter %}
-            <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ profile_user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.twitter}}</a>
-            <br>
-            {% endif %}
-            {% if profile_user.userprofile.instagram %}
-            <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ profile_user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.instagram}}</a>
-            <br>
-            {% endif %}
-            {% if profile_user.userprofile.facebook %}
-            <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ profile_user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.facebook}}</a>
-            {% endif %}      
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="bio">
+                        <h5>@{{ profile_user.username }}'s Bio:</h5>
+                        {% if profile_user.userprofile.bio %}
+                        <p>{{ profile_user.userprofile.bio }}</p>
+                        {% else %}
+                        <p>No bio available: <br>{{ profile_user.username }} is keeping a low profile!</p>
+                        {% endif %}
+                        {% if profile_user.userprofile.twitter or profile_user.userprofile.instagram or profile_user.userprofile.facebook %}
+                        <h6>Follow {{profile_user.username}} on:</h6>
+                        {% endif %}
+                        {% if profile_user.userprofile.twitter %}
+                        <i class="fa-brands fa-twitter" style="color: #9cbdf7;"></i><a href="{{ profile_user.userprofile.twitter }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.twitter}}</a>
+                        <br>
+                        {% endif %}
+                        {% if profile_user.userprofile.instagram %}
+                        <i class="fa-brands fa-instagram" style="color: #d419e1;"></i><a href="{{ profile_user.userprofile.instagram }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.instagram}}</a>
+                        <br>
+                        {% endif %}
+                        {% if profile_user.userprofile.facebook %}
+                        <i class="fa-brands fa-facebook" style="color: #093c95;"></i><a href="{{ profile_user.userprofile.facebook }}" target="_blank">  <i class="fa-solid fa-link" style="color: #ffffff;"></i> {{profile_user.userprofile.facebook}}</a>
+                        {% endif %}      
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Followers
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                            <ul class="list-group">
+                                {% for follower in profile_user.userprofile.followers.all %}
+                                    <li class="list-group-item">{{ follower.username }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Following
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                            <ul class="list-group">
+                                {% for following in profile_user.userprofile.following.all %}
+                                    <li class="list-group-item">{{ following.username }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
