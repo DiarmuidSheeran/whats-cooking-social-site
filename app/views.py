@@ -217,7 +217,7 @@ def follow_user(request, username):
         user_to_follow.userprofile.followers.add(request.user)
         follwed = True
 
-    return HttpResponseRedirect(reverse('index'))
+    return JsonResponse({ 'followed': followed })
 
 @login_required(login_url='landing')
 def settings(request):
