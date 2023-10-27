@@ -58,14 +58,19 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="dropdown">
+                    <div class="dropdown" style="background-color: #000000;">
                         <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Followers
                         </button>
                         <div class="dropdown-menu" aria-labelledby="followerDropdown">
                             <ul class="list-group">
                                 {% for follower in user.userprofile.followers.all %}
-                                    <li class="list-group-item">{{ follower.username }}</li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'user_profile' follower.username %}">
+                                            <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                            {{ follower.username }}
+                                        </a>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -79,7 +84,12 @@
                         <div class="dropdown-menu" aria-labelledby="followerDropdown">
                             <ul class="list-group">
                                 {% for following in user.userprofile.following.all %}
-                                    <li class="list-group-item">{{ following.username }}</li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'user_profile' following.username %}">
+                                            <img class="mr-3 rounded-circle" src="{{ following.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                            {{ following.username }}
+                                        </a>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>
