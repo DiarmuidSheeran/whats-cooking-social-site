@@ -285,6 +285,22 @@ body {
 .follow-dropdown-button {
     margin-top: 15px;
 }
+.custom-dropdown .dropdown-menu {
+    background-color: #000000; 
+    
+}
+.custom-dropdown .dropdown-menu ul.list-group {
+    background-color: #000000; 
+}
+
+.custom-dropdown .dropdown-menu ul.list-group li {
+    background-color: #000000; 
+}
+.custom-dropdown .dropdown-menu a{
+    color:#ffffff;
+    text-decoration: none; 
+    
+}
 
 /*----- Settings Page Styling ----*/
 
