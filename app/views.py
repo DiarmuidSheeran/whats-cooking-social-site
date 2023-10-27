@@ -80,6 +80,7 @@ def profile(request):
 
     return render(request, 'profile.html', context)
 
+@login_required(login_url='landing')
 def user_profile(request, username):
     profile_user = get_object_or_404(User, username=username)
 
@@ -92,6 +93,7 @@ def user_profile(request, username):
 
     return render(request, 'profile_user.html', context)
 
+@login_required(login_url='landing')
 def bio(request):
     user = request.user
     profile = UserProfile.objects.get(user=user)
@@ -214,7 +216,7 @@ def post_like(request, slug, *args, **kwargs):
 
     return JsonResponse({ 'likes_count': post.likes.count(), 'liked': liked})
 
-@login_required
+@login_required(login_url='landing')
 def follow_user(request, username):
     user_to_follow = get_object_or_404(User, username=username)
 
@@ -293,6 +295,7 @@ def search_users(request):
     context = {'results': results}
     return render(request, 'search_results.html', context)
 
+@login_required(login_url='landing')
 def get_recipe_data(query):
     api_id = os.environ.get("EDAMAM_API_ID")
     api_key = os.environ.get("EDAMAM_API_KEY")
@@ -311,6 +314,7 @@ def get_recipe_data(query):
     else:
         return None
 
+@login_required(login_url='landing')
 def recipe_search(request):
     query = request.GET.get('q', '') 
     if query:
