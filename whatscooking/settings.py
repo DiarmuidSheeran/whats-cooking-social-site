@@ -35,7 +35,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io', 'whats-cooking-socail-site-21a4223c5487.herokuapp.com']
+ALLOWED_HOSTS = ['8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io', 'https://whats-cooking-socail-site-21a4223c5487.herokuapp.com/']
 
 
 # Application definition
