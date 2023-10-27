@@ -15,6 +15,7 @@ urlpatterns = [
     path('create_post/', views.create_post , name="create_post"),
     path('post/<slug:slug>', views.view_post , name="view_post"),
     path('update_post/<slug:slug>/', views.update_posts , name="update_posts"),
+    path('delete_post/<slug:slug>/', views.delete_post, name='delete_post'),
     path('confirm_delete_post/<slug:slug>/', views.confirm_delete_post, name='confirm_delete_post'),
     path('index/<slug:slug>/', views.add_comment_to_post, name='add_comment_to_post'),
     path('index/<slug:slug>/like/', views.post_like, name='post_like'),

@@ -5,7 +5,7 @@
 <div class="custom-content">
     <div class="container content">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-8 offset-md-2 content">
                 <div class="card my-8">
                     <div class="card-header">
                         <h2>Delete Post</h2>
@@ -15,10 +15,11 @@
                         <p>Are you sure you want to delete this post? This action cannot be undone.</p>
                     </div>
                     <div class="card-footer" id="settings-footer">
-                        <a class="nav-item nav-link active" aria-current="page" href="{% url 'update_posts' post.slug %}"><button class="btn btn btn-primary btn-sm btn-block update-btn" type="submit">Go Back</button></a>
+                        <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'update_posts' post.slug %}" style="text-decoration: none; color: white;">Go Back</a></button>
+                        <br>
                         <form method="post" action="{% url 'delete_post' post.slug %}">
                             {% csrf_token %}
-                            <button class="btn btn btn-primary btn-sm btn-block btn-danger" type="submit">Delete Post</button>
+                        <button class="btn btn-sm btn-danger" type="submit">Delete Account</button>
                         </form>
                     </div>
                 </div>
@@ -26,3 +27,4 @@
         </div>
     </div>
 </div>
+{% endblock %} 

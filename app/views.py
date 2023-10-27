@@ -10,6 +10,7 @@ import os
 import requests
 from django.http import JsonResponse
 
+
 # Create your views here.
 @unauthenticated_user
 def landing(request):
@@ -96,6 +97,7 @@ def bio(request):
     profile = UserProfile.objects.get(user=user)
     if request.method == 'POST':
         form = BioForm(request.POST, request.FILES, instance=profile)
+        
         if form.is_valid():
             profile = form.save(commit=False)
             profile.bio = form.cleaned_data.get('bio')
@@ -155,6 +157,16 @@ def update_posts(request, slug):
         'form': form
     }
     return render(request, 'update_post.html', context)
+
+@login_required(login_url='landing')
+def delete_post(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+    if request.user == post.user:
+        if request.method == 'POST':
+            post.delete()
+            return redirect('index')
+        else:
+            return redirect('confirm_delete_post', slug=post.slug)
 
 @login_required(login_url='landing')
 def confirm_delete_post(request, slug):
