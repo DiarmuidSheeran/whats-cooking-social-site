@@ -61,7 +61,19 @@
                         <div class="dropdown-menu" aria-labelledby="followerDropdown">
                             <ul class="list-group">
                                 {% for follower in profile_user.userprofile.followers.all %}
-                                    <li class="list-group-item">{{ follower.username }}</li>
+                                <li class="list-group-item"></li>
+                                {% if request.user == follower %}
+                                <a href="{% url 'profile' %}">
+                                    <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                    {{ follower.username }}
+                                </a>
+                                {% else %}
+                                <a href="{% url 'user_profile' follower.username %}">
+                                    <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                    {{ follower.username }}
+                                </a>
+                                {% endif %}
+                                </li>
                                 {% endfor %}
                             </ul>
                         </div>
@@ -75,7 +87,19 @@
                         <div class="dropdown-menu" aria-labelledby="followerDropdown">
                             <ul class="list-group">
                                 {% for following in profile_user.userprofile.following.all %}
-                                    <li class="list-group-item">{{ following.username }}</li>
+                                <li class="list-group-item">
+                                    {% if request.user == following %}
+                                    <a href="{% url 'profile' %}">
+                                        <img class="mr-3 rounded-circle" src="{{ following.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                        {{ following.username }}
+                                    </a>
+                                    {% else %}
+                                    <a href="{% url 'user_profile' following.username %}">
+                                        <img class="mr-3 rounded-circle" src="{{ following.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                        {{ following.username }}
+                                    </a>
+                                    {% endif %}
+                                </li>
                                 {% endfor %}
                             </ul>
                         </div>
