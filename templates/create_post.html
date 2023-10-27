@@ -29,6 +29,9 @@
                             <input type="file" name="{{ form.featured_image.name }}" class="input-file">
                             <i class="fa-regular fa-image" style="color: #ffffff;"></i> Upload Image
                         </label>
+                        <div class="text-danger">
+                            {{ form.featured_image.errors }}
+                        </div>
                     </div> 
                     <div class="card-footer custom-card-footer">
                         <button class="btn btn-primary btn-sm btn-block update-btn" type="submit">Create Post</button>
