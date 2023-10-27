@@ -33,6 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io', 'whats-cooking-socail-site-21a4223c5487.herokuapp.com']
 
 
