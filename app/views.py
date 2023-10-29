@@ -191,7 +191,7 @@ def bio(request):
             profile.instagram = form.cleaned_data.get('instagram')
             profile.save()
             user.save()
-            messages.success(request, 'Your Bio has been updated successfully')
+            messages.success(request, 'Bio has been updated successfully')
             return redirect('profile')
     else:
         form = BioForm(instance=profile)
@@ -223,7 +223,7 @@ def create_post(request):
             new_post = form.save(commit=False)
             new_post.user = request.user
             new_post.save()
-            messages.success(request, 'Congratulations! Your Post has been created successfully')
+            messages.success(request, 'Post has been created successfully')
             return redirect('index')
         else:
             messages.error(request, 'There was an error in creating you post!<br>'
@@ -269,7 +269,7 @@ def update_posts(request, slug):
         form = UpdatePostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Congratulations! Your Post has been updated successfully!')
+            messages.success(request, 'Post has been updated successfully!')
             return redirect('view_post', slug=post.slug)
         else:
             messages.error(request, 'There was an error in editing you post!<br>'
@@ -296,7 +296,7 @@ def delete_post(request, slug):
     if request.user == post.user:
         if request.method == 'POST':
             post.delete()
-            messages.success(request, 'Your Post has been deleted successfully!')
+            messages.success(request, 'Post deleted successfully!')
             return redirect('index')
         else:
             messages.error(request, 'There was an error while deleting your post!<br>'
@@ -332,7 +332,7 @@ def add_comment_to_post(request, slug):
     Form is saved
     Comment Added to post
     Comment is related to user
-    User is redirected back to index page
+    User is redirected back to view_post page
     form and comment are stored in context dictionary
     context rendered with comment_to_post page
     """
@@ -462,7 +462,7 @@ def update_info(request):
             user.username = form.cleaned_data.get('username')
             profile.save()
             user.save()
-            messages.success(request, 'Succes! Your account info has been updated successfully!')
+            messages.success(request, 'Account info updated successfully!')
             return redirect('settings')
     else:
         form = UpdateForm(instance=profile)
@@ -484,7 +484,7 @@ def delete_account(request):
     if request.method == 'POST':
         request.user.delete()
         logout(request)
-        messages.success(request, 'Your account has been deleted successfully!')
+        messages.success(request, 'Your account has been deleted!')
         return redirect('landing')
     return render(request, 'delete_account.html')
 
