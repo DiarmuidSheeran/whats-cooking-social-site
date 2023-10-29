@@ -26,6 +26,7 @@ body {
 }
 .forms-content {
     margin-top: 60px;
+    margin-bottom: 25px;
 }
 .custom-file-upload {
     display: inline-block;
@@ -102,7 +103,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 50px;
     color: #ffffff;
     margin-bottom: 5px;
 }

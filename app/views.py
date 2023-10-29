@@ -38,7 +38,12 @@ def signup(request):
             fname = form.cleaned_data.get('fname')
             lname = form.cleaned_data.get('lname')
             UserProfile.objects.create(user=user, fname=fname, lname=lname, profile_pic="placeholder")
+            messages.success(request, 'Success! ' + str(fname) + '. Your account has been created!<br>'
+                                      'You can now log into your account!')
             return redirect('login')
+        else:
+            messages.error(request, 'Account Registration error!<br>'
+                                    'Please Make sure all details are valid!')
 
     context = {'form': form}
     return render(request, 'signup.html', context)
@@ -61,8 +66,12 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, 'You have logged in.')
+            messages.success(request, 'Success @' + str(username) + '. You have logged in successfully.')
             return redirect('index')
+        else:
+            messages.error(request, 'Login failed!<br>'
+                                    'Username and/or Pasword is incorrect!')
+            return redirect('login')
 
     return render(request, 'login.html')
 
@@ -72,6 +81,7 @@ def logoutUser(request):
     Redirects user to landing page
     """
     logout(request)
+    messages.success(request, 'You have logged out successfully.')
     return redirect('landing')
 
 @login_required(login_url='landing')
@@ -180,6 +190,7 @@ def bio(request):
             profile.instagram = form.cleaned_data.get('instagram')
             profile.save()
             user.save()
+            messages.success(request, 'Your Bio has been updated successfully')
             return redirect('profile')
     else:
         form = BioForm(instance=profile)
@@ -211,7 +222,12 @@ def create_post(request):
             new_post = form.save(commit=False)
             new_post.user = request.user
             new_post.save()
+            messages.success(request, 'Congratulations! Your Post has been created successfully')
             return redirect('index')
+        else:
+            messages.error(request, 'There was an error in creating you post!<br>'
+                                    'Please ensure all text fields have content')
+            return redirect('create_post')
 
     context = {'form': form}
     return render(request, 'create_post.html', context)
@@ -252,6 +268,11 @@ def update_posts(request, slug):
         form = UpdatePostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Congratulations! Your Post has been updated successfully!')
+            return redirect('view_post', slug=post.slug)
+        else:
+            messages.error(request, 'There was an error in editing you post!<br>'
+                                    'Please ensure all text fields have content')
             return redirect('view_post', slug=post.slug)
 
     context = {
@@ -274,8 +295,11 @@ def delete_post(request, slug):
     if request.user == post.user:
         if request.method == 'POST':
             post.delete()
+            messages.success(request, 'Your Post has been deleted successfully!')
             return redirect('index')
         else:
+            messages.error(request, 'There was an error while deleting your post!<br>'
+                                    'Please try again!')
             return redirect('confirm_delete_post', slug=post.slug)
 
 @login_required(login_url='landing')
@@ -436,6 +460,7 @@ def update_info(request):
             user.username = form.cleaned_data.get('username')
             profile.save()
             user.save()
+            messages.success(request, 'Succes! Your account info has been updated successfully!')
             return redirect('settings')
     else:
         form = UpdateForm(instance=profile)
@@ -457,6 +482,7 @@ def delete_account(request):
     if request.method == 'POST':
         request.user.delete()
         logout(request)
+        messages.success(request, 'Your account has been deleted successfully!')
         return redirect('landing')
     return render(request, 'delete_account.html')
 
