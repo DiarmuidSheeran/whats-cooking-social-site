@@ -29,9 +29,9 @@
                             <input class="btn btn btn-primary btn-sm btn-block update-btn" type="submit" value="Login" style="color: #f2f4f8;">
                         </div>
                 </form>
-
+               
             </div>
-            
+            {{form.errors}}
             <div class="mt-4">
                 <div class="d-flex justify-content-center links">
                     Don't have an account? <a href="{% url 'signup' %}" class="ml-2">Sign Up</a>
@@ -39,7 +39,7 @@
                 <div class="d-flex justify-content-center links">
                     Forgot your password? <a href="{% url 'reset_password' %}" class="ml-2">Reset Password</a>
                 </div>
-        
+                
             </div>
         </div>
     </div>

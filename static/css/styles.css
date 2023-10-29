@@ -17,10 +17,12 @@ body {
     background-color: #000000;
 }
 .content {
-    margin-top: 30px;
     padding: 20px;
     margin-bottom: 25px;
     padding-bottom: 25px;
+}
+.messages-content {
+    margin-top: 60px;
 }
 .custom-file-upload {
     display: inline-block;

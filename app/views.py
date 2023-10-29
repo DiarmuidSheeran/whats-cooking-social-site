@@ -9,6 +9,7 @@ from django.urls import reverse
 import os
 import requests
 from django.http import JsonResponse
+from django.contrib import messages
 
 
 # Create your views here.
@@ -60,9 +61,9 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
+            messages.success(request, 'You have logged in.')
             return redirect('index')
-        else:
-            messages.info(request, 'Username OR Password is incorrect')
+
     return render(request, 'login.html')
 
 @login_required(login_url='landing')
