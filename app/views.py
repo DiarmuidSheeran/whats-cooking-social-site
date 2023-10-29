@@ -516,7 +516,7 @@ def search_users(request):
     return render(request, 'search_results.html', context)
 
 @login_required(login_url='landing')
-def get_recipe_data(query):
+def get_recipe_data(request, query):
     """
     App id is given value from env file
     App key is given value from env file
@@ -554,7 +554,7 @@ def recipe_search(request):
     """
     query = request.GET.get('q', '') 
     if query:
-        recipes = get_recipe_data(query)
+        recipes = get_recipe_data(request, query)
     else:
         recipes = None
 
