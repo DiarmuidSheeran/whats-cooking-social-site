@@ -24,6 +24,9 @@ body {
 .messages-content {
     margin-top: 60px;
 }
+.forms-content {
+    margin-top: 60px;
+}
 .custom-file-upload {
     display: inline-block;
     padding: 6px 12px;
