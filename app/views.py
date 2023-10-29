@@ -66,7 +66,8 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, 'Success @' + str(username) + '. You have logged in successfully.')
+            messages.success(request, 'Success ' + str(username) + '<br>' 
+                                      'You have logged in successfully!')
             return redirect('index')
         else:
             messages.error(request, 'Login failed!<br>'
@@ -346,7 +347,8 @@ def add_comment_to_post(request, slug):
             comment.post = post
             comment.user = request.user
             comment.save()
-        return redirect('index')
+            messages.success(request, 'Comment added to post bellow!')
+        return redirect('view_post', slug=post.slug)
 
     context = {
                'form': form,
