@@ -10,6 +10,7 @@ import os
 import requests
 from django.http import JsonResponse
 from django.contrib import messages
+from django.template.defaultfilters import filesizeformat
 
 
 # Create your views here.
@@ -209,6 +210,9 @@ def create_post(request):
     Renders the create a post page.
     Takes in the authenticated user and stores them in user variable
     Form generated from PostForm in forms.py
+    Checks if a file was uploaded.
+    Compare the size of the uploaded file to the maximum size.
+    Set the maximum file size to 10 MB in bytes.
     Once form is submitted is valid new post is created
     Post is stored and attributed to authenticated User
     User is redirected back index page.
@@ -220,6 +224,13 @@ def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            uploaded_file = form.cleaned_data.get('featured_image')
+            if uploaded_file:
+                max_size = 10 * 1024 * 1024
+                if uploaded_file.size > max_size:
+                    messages.success(request, 'File size is too large!')
+                    return render(request, 'create_post.html', {'form': form})
+
             new_post = form.save(commit=False)
             new_post.user = request.user
             new_post.save()
