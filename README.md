@@ -29,6 +29,186 @@
 Insert link to user stories here
 * Please not that due to ammendmants throught the project the id numbers are no longer sequenced.
 
+## Project Design:
+### Wireframes
+#### With the idea for the website planned, I began with drawing out with a pencil the concept idea for some of the different pages within the site.
+* Landing:
+
+insert image
+
+* Sign-up:
+
+insert image
+
+* Sign-in:
+
+insert image
+
+* Home Page:
+
+insert image
+
+* Profile Page:
+
+insert image
+
+* Create Post Page:
+
+insert image
+
+* Settings Page:
+
+insert image
+
+#### I then began creating wireframes to depict a more narrowed down outlook for how the differnet pages depending on functionality should look throught the site:
+
+* Landing:
+
+insert image
+
+* Form Pages: 
+
+insert image
+
+* Feed Pages:
+
+insert image
+
+* Message Pages:
+
+insert image
+
+* Searcg Pages:
+
+insert image
+
+### Colors
+
+* I have incorporated a carefully selected color palette throughout the website, aimed at creating a visually appealing design, allowing for a more streamlined and user-friendly experience.
+
+insert image of color pallete.
+
+### Data Models
+
+insert image of models plan
+
+### Typography 
+
+* The google font ____ was used throught the site.
+
+## Site Look and Features
+
+### Pages
+
+* **Landing page:**
+
+* **Sign up page**
+
+* **Log in page**
+
+* **Reset password pages**
+
+* **Index/Home page**
+
+* **Following page**
+
+* **Profile page**
+
+* **Users profile page**
+
+* **Edit bio page**
+
+* **Recipe page**
+
+* **User search page**
+
+* **Create post page**
+
+* **Edit post page**
+
+* **Post's page**
+
+* **Settings page**
+
+* **Edit info page**
+
+### Features
+* **Signup**
+
+* **Login**
+
+* **Create a post**
+
+* **Edit a post**
+
+* **Like/unlike a post**
+
+* **Comment on a post**
+
+* **Delete a post**
+
+* **Follow/unfollow users**
+
+* **Edit bio**
+
+* **Update user info**
+
+* **Delete account**
+
+## Testing
+* Link to testing.md file
+
+## Technolgies Used:
+### Languages:
+* HTML5
+* CSS
+* Javascript
+* Python
+
+### Frameworks: 
+* Django
+* Bootstrap
+
+### Other Technolgies: 
+* Cloudinary 
+* Gitpod
+* GitHub 
+* Heroku 
+* Elephant Sql
+
+## Deployment
+1. **Cerate Django app**
+* insert info here
+2. **Create Heroku app**
+* insert info here
+3. **Create Database**
+* insert info here
+4. **Set up Enviorment Variables**
+* insert info here
+5. **Connect Enviorment Variables to Django app**
+* insert info here
+6. **Make Migrations**
+* insert info here
+7. **Create media, static and tmeplate folders**
+* insert info here
+8. **Create procfile**
+* insert info here
+9. **Push changes to github**
+* insert info here
+10. **Heroku Deployment**
+* insert info here
+11. **Final Deployment**
+* insert info here
+
+## Credits
+
+* insert info here
+
+## Acknowledgements
+
+* insert info here
+
+
 
 
 
