@@ -3,7 +3,15 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
-from .forms import CreateUserForm, PostForm, BioForm, UpdatePostForm, CommentForm, UpdateForm, UpdatePicForm
+from .forms import (
+    CreateUserForm,
+    PostForm,
+    BioForm,
+    UpdatePostForm,
+    CommentForm,
+    UpdateForm,
+    UpdatePicForm
+)
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import os
@@ -20,6 +28,7 @@ def landing(request):
     Renders the landing page.
     """
     return render(request, 'landing.html')
+
 
 @unauthenticated_user
 def signup(request):
@@ -38,9 +47,19 @@ def signup(request):
             user = form.save()
             fname = form.cleaned_data.get('fname')
             lname = form.cleaned_data.get('lname')
-            UserProfile.objects.create(user=user, fname=fname, lname=lname, profile_pic="placeholder")
-            messages.success(request, 'Success! ' + str(fname) + '. Your account has been created!<br>'
-                                      'You can now log into your account!')
+            UserProfile.objects.create(
+                user=user,
+                fname=fname,
+                lname=lname,
+                profile_pic="placeholder"
+            )
+            messages.success(
+                request,
+                'Success! ' + str(fname) +
+                '. Your account has been created!'
+                '<br>'
+                'You can now log into your account!'
+            )
             return redirect('login')
         else:
             messages.error(request, 'Account Registration error!<br>'
@@ -48,6 +67,7 @@ def signup(request):
 
     context = {'form': form}
     return render(request, 'signup.html', context)
+
 
 @unauthenticated_user
 def user_login(request):
@@ -67,7 +87,7 @@ def user_login(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, 'Success ' + str(username) + '<br>' 
+            messages.success(request, 'Success ' + str(username) + '<br>'
                                       'You have logged in successfully!')
             return redirect('index')
         else:
@@ -77,6 +97,7 @@ def user_login(request):
 
     return render(request, 'login.html')
 
+
 @login_required(login_url='landing')
 def logoutUser(request):
     """
@@ -85,6 +106,7 @@ def logoutUser(request):
     logout(request)
     messages.success(request, 'You have logged out successfully.')
     return redirect('landing')
+
 
 @login_required(login_url='landing')
 def index(request):
@@ -102,6 +124,7 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
+
 @login_required(login_url='landing')
 def follow_feed(request):
     """
@@ -115,12 +138,15 @@ def follow_feed(request):
     context rendered with follow feed page.
     """
     following_users = request.user.userprofile.following.all()
-    posts = Post.objects.filter(user__in=following_users).order_by('-created_on')
+    posts = Post.objects.filter(user__in=following_users).order_by(
+        '-created_on'
+    )
 
     context = {
         'posts': posts,
     }
     return render(request, 'follow_feed.html', context)
+
 
 @login_required(login_url='landing')
 def profile(request):
@@ -140,6 +166,7 @@ def profile(request):
     }
 
     return render(request, 'profile.html', context)
+
 
 @login_required(login_url='landing')
 def user_profile(request, username):
@@ -164,6 +191,7 @@ def user_profile(request, username):
 
     return render(request, 'profile_user.html', context)
 
+
 @login_required(login_url='landing')
 def bio(request):
     """
@@ -183,7 +211,6 @@ def bio(request):
     profile = UserProfile.objects.get(user=user)
     if request.method == 'POST':
         form = BioForm(request.POST, request.FILES, instance=profile)
-        
         if form.is_valid():
             profile = form.save(commit=False)
             profile.bio = form.cleaned_data.get('bio')
@@ -203,6 +230,7 @@ def bio(request):
                }
 
     return render(request, 'bio.html', context)
+
 
 @login_required(login_url='landing')
 def create_post(request):
@@ -237,12 +265,17 @@ def create_post(request):
             messages.success(request, 'Post has been created successfully')
             return redirect('index')
         else:
-            messages.error(request, 'There was an error in creating you post!<br>'
-                                    'Please ensure all text fields have content')
+            messages.error(
+                request,
+                'There was an error in creating you post!'
+                '<br>'
+                'Please ensure all text fields have content'
+            )
             return redirect('create_post')
 
     context = {'form': form}
     return render(request, 'create_post.html', context)
+
 
 @login_required(login_url='landing')
 def view_post(request, slug):
@@ -260,6 +293,7 @@ def view_post(request, slug):
     }
 
     return render(request, 'post.html', context)
+
 
 @login_required(login_url='landing')
 def update_posts(request, slug):
@@ -283,8 +317,12 @@ def update_posts(request, slug):
             messages.success(request, 'Post has been updated successfully!')
             return redirect('view_post', slug=post.slug)
         else:
-            messages.error(request, 'There was an error in editing you post!<br>'
-                                    'Please ensure all text fields have content')
+            messages.error(
+                request,
+                'There was an error in editing you post!'
+                '<br>'
+                'Please ensure all text fields have content'
+            )
             return redirect('view_post', slug=post.slug)
 
     context = {
@@ -292,6 +330,7 @@ def update_posts(request, slug):
         'form': form
     }
     return render(request, 'update_post.html', context)
+
 
 @login_required(login_url='landing')
 def delete_post(request, slug):
@@ -310,9 +349,14 @@ def delete_post(request, slug):
             messages.success(request, 'Post deleted successfully!')
             return redirect('index')
         else:
-            messages.error(request, 'There was an error while deleting your post!<br>'
-                                    'Please try again!')
+            messages.error(
+                request,
+                'There was an error while deleting your post!'
+                '<br>'
+                'Please try again!'
+            )
             return redirect('confirm_delete_post', slug=post.slug)
+
 
 @login_required(login_url='landing')
 def confirm_delete_post(request, slug):
@@ -326,7 +370,6 @@ def confirm_delete_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
     context = {'post': post}
-    
     return render(request, 'confirm_delete_post.html', context)
 
 
@@ -349,7 +392,7 @@ def add_comment_to_post(request, slug):
     """
     post = get_object_or_404(Post, slug=slug)
     form = CommentForm()
-    comment = None 
+    comment = None
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -367,6 +410,7 @@ def add_comment_to_post(request, slug):
             }
     return render(request, 'index.html', context)
 
+
 @login_required(login_url='landing')
 def post_like(request, slug, *args, **kwargs):
     """
@@ -376,7 +420,7 @@ def post_like(request, slug, *args, **kwargs):
     Checks to see if post is liked by user
     If post is liked, like is removed,
     If post is not liked, like is added
-    JSON response containing the count of likes on the post returened. 
+    JSON response containing the count of likes on the post returened.
     JSON response containing the current user has liked the post returened.
     """
     post = get_object_or_404(Post, slug=slug)
@@ -390,8 +434,8 @@ def post_like(request, slug, *args, **kwargs):
         post.likes.add(request.user)
         liked = True
 
+    return JsonResponse({'likes_count': post.likes.count(), 'liked': liked})
 
-    return JsonResponse({ 'likes_count': post.likes.count(), 'liked': liked})
 
 @login_required(login_url='landing')
 def follow_user(request, username):
@@ -404,13 +448,15 @@ def follow_user(request, username):
     If user is unfollowed, follower is removed for diercted user
     If user is followed, following is added for authenticated user
     If user is followed, follower is added for diercted user
-    JSON response containing followed returened. 
+    JSON response containing followed returened.
     """
     user_to_follow = get_object_or_404(User, username=username)
 
     followed = False
 
-    if request.user.userprofile.following.filter(id=user_to_follow.id).exists():
+    if request.user.userprofile.following.filter(
+        id=user_to_follow.id
+    ).exists():
         request.user.userprofile.following.remove(user_to_follow)
         user_to_follow.userprofile.followers.remove(request.user)
         followed = False
@@ -419,7 +465,8 @@ def follow_user(request, username):
         user_to_follow.userprofile.followers.add(request.user)
         follwed = True
 
-    return JsonResponse({ 'followed': followed })
+    return JsonResponse({'followed': followed})
+
 
 @login_required(login_url='landing')
 def settings(request):
@@ -437,7 +484,7 @@ def settings(request):
     user = request.user
     profile = UserProfile.objects.get(user=user)
     form = UpdatePicForm()
-    if request.method=='POST':
+    if request.method == 'POST':
         form = UpdatePicForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
@@ -447,6 +494,7 @@ def settings(request):
                'profile': profile
                }
     return render(request, 'settings.html', context)
+
 
 @login_required(login_url='landing')
 def update_info(request):
@@ -484,6 +532,7 @@ def update_info(request):
                }
     return render(request, 'update_info.html', context)
 
+
 @login_required(login_url='landing')
 def delete_account(request):
     """
@@ -499,12 +548,14 @@ def delete_account(request):
         return redirect('landing')
     return render(request, 'delete_account.html')
 
+
 @login_required(login_url='landing')
 def search(request):
     """
     Renders the search page
     """
     return render(request, 'search.html')
+
 
 @login_required(login_url='landing')
 def search_users(request):
@@ -518,13 +569,12 @@ def search_users(request):
     Context rendered with search_results page
     """
     query = request.GET.get('query')
-    results = User.objects.all() 
-    
+    results = User.objects.all()
     if query:
         results = results.filter(username__icontains=query)
-    
     context = {'results': results}
     return render(request, 'search_results.html', context)
+
 
 @login_required(login_url='landing')
 def get_recipe_data(request, query):
@@ -532,7 +582,8 @@ def get_recipe_data(request, query):
     App id is given value from env file
     App key is given value from env file
     URL defined for recipe search
-    Dictionary of parameters created for the API request, search query and API credentials
+    Dictionary of parameters created for the API request
+    Search query and API credentials
     Request is to the Edamam API
     Check if query exists
     Check if Api response is succesfull
@@ -554,6 +605,7 @@ def get_recipe_data(request, query):
     else:
         return None
 
+
 @login_required(login_url='landing')
 def recipe_search(request):
     """
@@ -563,13 +615,11 @@ def recipe_search(request):
     Recipes and Query are stored in a context dictionary
     Context rendered with recipes page
     """
-    query = request.GET.get('q', '') 
+    query = request.GET.get('q', '')
     if query:
         recipes = get_recipe_data(request, query)
     else:
         recipes = None
 
     context = {'recipes': recipes, 'query': query}
-    
     return render(request, 'recipes.html', context)
-
