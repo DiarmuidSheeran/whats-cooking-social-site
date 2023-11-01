@@ -4,23 +4,36 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import UserProfile, Post, Comment
 
-# Forms created for 
+# Forms created for
+
+
 class CreateUserForm(UserCreationForm):
     fname = forms.CharField(max_length=200, required=True)
     lname = forms.CharField(max_length=200, required=True)
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'fname', 'lname']
+        fields = [
+            'username',
+            'email',
+            'password1',
+            'password2',
+            'fname',
+            'lname'
+        ]
+
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'content', 'featured_image']
 
+
 class BioForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['bio', 'twitter', 'instagram', 'facebook']
+
 
 class UpdatePostForm(ModelForm):
 
@@ -28,20 +41,24 @@ class UpdatePostForm(ModelForm):
         model = Post
         fields = ['title', 'content', 'featured_image']
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
 
+
 class UpdateForm(ModelForm):
     fname = forms.CharField(max_length=200, required=True)
     lname = forms.CharField(max_length=200, required=True)
+
     class Meta:
         model = User
         fields = ['username', 'fname', 'lname']
 
+
 class UpdatePicForm(ModelForm):
     class Meta:
-        model = UserProfile 
+        model = UserProfile
         fields = ['profile_pic']
         exclude = ['user']
