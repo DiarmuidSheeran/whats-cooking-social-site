@@ -20,9 +20,9 @@
                             <img class="mr-3 rounded-circle" src="{{ post.user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
                             <h5 class="mt-0">{{ post.user.username }}</h5>
                         </a>
-                        <a class="nav-item nav-link active" aria-current="page" href="{% url 'update_posts' post.slug %}">
-                            <button class="btn btn-primary btn-sm follow-btn" type="submit">Edit </button>
-                        </a>
+                        <div class="float-left" style="margin-left: 10px;">
+                            <a class="btn btn-primary btn-sm follow-btn" href="{% url 'update_posts' post.slug %}">Edit</a>
+                        </div>
                         {% endif %}
         
                         <div class="ml-auto">
@@ -68,24 +68,30 @@
                             <h6>Comments</h6>
                             <ul>
                                 {% for comment in post.comments.all|slice:":2" %}
-                                {% if request.user != comment.user %}
-                                <a href="{% url 'user_profile' username=comment.user.username %}">
-                                <small><li>@{{ comment.user.username }}</a>
-                                {% else %}
-                                <a href="{% url 'profile' %}">
-                                    <small><li>@{{ comment.user.username }}</a>
-                                {% endif %}
-                                    {{ comment.created_on|date }}
-                                <br> {{ comment.content }} </li></small>
+                                <li>
+                                    {% if request.user != comment.user %}
+                                        <a href="{% url 'user_profile' username=comment.user.username %}">
+                                            <small>{{ comment.user.username }}</small>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'profile' %}">
+                                            <small>{{ comment.user.username }}</small>
+                                        </a>
+                                    {% endif %}
+                                    <small>{{ comment.created_on|date }}</small>
+                                    <br>{{ comment.content }}
+                                </li>
                                 {% empty %}
                                     <li>No comments yet.</li>
                                 {% endfor %}
-                            
+                                
                                 {% if post.comments.count > 2 %}
-                                <li><small><a href="{% url 'view_post' post.slug %}" class="view-more">View More...</a></small></li>
+                                    <li>
+                                        <small><a href="{% url 'view_post' post.slug %}" class="view-more">View More...</a></small>
+                                    </li>
                                 {% endif %}
                             </ul>
-                        </div> 
+                        </div>
                         <form method="post" action="{% url 'add_comment_to_post' slug=post.slug %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-group">
