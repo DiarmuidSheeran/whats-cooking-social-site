@@ -19,3 +19,13 @@ class ModelTestCase(TestCase):
         )
         self.assertEqual(user_profile.user.username, 'testuser')
         self.assertEqual(str(user_profile), 'Sammy Sheeran')
+
+    def test_post_creation(self):
+        post = Post.objects.create(
+            title='Test Post',
+            user=self.user,
+            content='This is a test post content'
+        )
+        self.assertEqual(post.title, 'Test Post')
+        self.assertEqual(post.user.username, 'testuser')
+        self.assertTrue(post.slug)
