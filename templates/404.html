@@ -1,1 +1,12 @@
-
+{% extends 'landing.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block landing %}
+<div class="d-flex justify-content-center align-items-center h-100" style="margin-top: 50px;">
+    <div class="text-center">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <a href="{% url 'index' %}" class="ml-2">Click here to be Redirected</a>
+    </div>
+</div>
+{% endblock %}
