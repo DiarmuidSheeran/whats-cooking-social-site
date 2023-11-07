@@ -1,4 +1,3 @@
-
 $(document).ready(function ($) {
   //Create Event handler for elements within class like-form
     $(".like-form").on("click", function(event) {
