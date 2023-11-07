@@ -15,7 +15,7 @@
                         <p>Are you sure you want to delete this post? This action cannot be undone.</p>
                     </div>
                     <div class="card-footer" id="settings-footer">
-                        <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'update_posts' post.slug %}" style="text-decoration: none; color: white;">Go Back</a></button>
+                        <a class="btn btn-primary btn-sm btn-block settings-btn" href="{% url 'update_posts' post.slug %}" style="text-decoration: none; color: white;">Go Back</a>
                         <br>
                         <form method="post" action="{% url 'delete_post' post.slug %}">
                             {% csrf_token %}

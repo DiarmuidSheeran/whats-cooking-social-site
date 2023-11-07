@@ -17,7 +17,7 @@
                     </div>
                     
                     <div class="card-footer" id="settings-footer">
-                        <button class="btn btn btn-primary btn-sm btn-block settings-btn" type="submit"><a class="nav-link" href="{% url 'settings' %}" style="text-decoration: none; color: white;">Go Back</a></button>
+                        <a class="btn btn-primary btn-sm btn-block settings-btn" href="{% url 'settings' %}" style="text-decoration: none; color: white;">Go Back</a>
                         <br>
                         <form method="post">
                             {% csrf_token %}

@@ -19,9 +19,9 @@
                                 <img class="mr-3 rounded-circle" src="{{ post.user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
                                 <h5 class="mt-0">{{ post.user.username }}</h5>
                             </a>
-                            <a class="nav-item nav-link active" aria-current="page" href="{% url 'update_posts' post.slug %}">
-                                <button class="btn btn-primary btn-sm follow-btn" type="submit">Edit</button>
-                            </a>
+                            <div class="float-left" style="margin-left: 10px;">
+                                <a class="btn btn-primary btn-sm follow-btn" href="{% url 'update_posts' post.slug %}">Edit</a>
+                            </div>
                             {% endif %}
                             <div class="ml-auto">
                                 {% if request.user != post.user %}

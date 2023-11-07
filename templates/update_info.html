@@ -14,24 +14,24 @@
                 </div>
 				<div class="d-flex justify-content-center form_container">
 
-					<form method="POST" action="" enctype="multipart/form-data">
+					<form method="POST" action="{% url 'update_info' %}" enctype="multipart/form-data">
 						{% csrf_token %}
 						<div class="input-group mb-3">
 							<div class="input-group-append ">
-								<span class="input-group-text span"><i class="fas fa-user"></i></span>
+								<span class="input-group-text span"><i class="fas fa-user" style="color: #fff;"></i></span>
 							</div>
 							<input type="text" class="form-control" placeholder="{{profile.fname}}" name="{{ form.fname.name }}" value="{{ profile.fname }}">
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append ">
-								<span class="input-group-text span"><i class="fas fa-user"></i></span>
+								<span class="input-group-text span"><i class="fas fa-user" style="color: #fff;"></i></span>
 								
 							</div>
 							<input type="text" class="form-control" placeholder="{{profile.lname}}" name="{{ form.lname.name }}" value="{{ profile.lname }}">
 						</div>
 						<div class="input-group mb-3">
 							<div class="input-group-append ">
-								<span class="input-group-text span"><i class="fas fa-user"></i></span>   
+								<span class="input-group-text span"><i class="fas fa-user" style="color: #fff;"></i></span>   
 							</div>
 							<input type="text" class="form-control" placeholder="user.username" name="{{ form.username.name }}" value="{{ user.username }}">
 						</div>
