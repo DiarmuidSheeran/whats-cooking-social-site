@@ -5,11 +5,11 @@
 <div class="custom-profile">
     <div class="container content">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" >
-            <h5 class="mt-0"><h3>@{{profile_user.username}}'s Profile</h3></h5>
+            <h3 class="mt-0">@{{profile_user.username}}'s Profile</h3>
         </div>
         <div class="card my-4 custom-profile-head">
             <div class="card-header profile-info">
-                <div id="profile-header custom-profile-head">
+                <div id="profile-header">
                     <img class="mr-3 rounded-circle" src="{{ profile_user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <div>
@@ -55,24 +55,24 @@
                 </div>
                 <div class="col-md-3">
                     <div class="dropdown custom-dropdown">
-                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Followers
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                        <div class="dropdown-menu">
                             <ul class="list-group">
                                 {% for follower in profile_user.userprofile.followers.all %}
-                                <li class="list-group-item"></li>
-                                {% if request.user == follower %}
-                                <a href="{% url 'profile' %}">
-                                    <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
-                                    {{ follower.username }}
-                                </a>
-                                {% else %}
-                                <a href="{% url 'user_profile' follower.username %}">
-                                    <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
-                                    {{ follower.username }}
-                                </a>
-                                {% endif %}
+                                <li class="list-group-item">
+                                    {% if request.user == follower %}
+                                        <a href="{% url 'profile' %}">
+                                            <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                            {{ follower.username }}
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'user_profile' follower.username %}">
+                                            <img class="mr-3 rounded-circle" src="{{ follower.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 50px; height: 50px;">
+                                            {{ follower.username }}
+                                        </a>
+                                    {% endif %}
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -81,10 +81,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="dropdown custom-dropdown">
-                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Following
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                        <div class="dropdown-menu">
                             <ul class="list-group">
                                 {% for following in profile_user.userprofile.following.all %}
                                 <li class="list-group-item">

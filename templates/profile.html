@@ -5,11 +5,11 @@
 <div class="custom-profile">
     <div class="container content">
         <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" >
-            <h5 class="mt-0"><h3>Hello @{{user.username}}</h3></h5>
+            <h3 class="mt-0">Hello {{user.username}}</h3>
         </div>
         <div class="card my-4 custom-profile-head">
             <div class="card-header profile-info" >
-                <div id="profile-header custom-profile-head">
+                <div id="profile-header">
                     <img class="mr-3 rounded-circle" src="{{ user.userprofile.profile_pic.url }}" alt="Profile Picture" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <div>
@@ -52,17 +52,15 @@
                         {% endif %} 
                         <br>
                         <br>
-                        <a href="{% url 'bio' %}">
-                        <button class="btn btn-primary btn-sm update-btn" type="submit">Update Bio</button>
-                        </a>     
+                        <a href="{% url 'bio' %}" class="btn btn-primary btn-sm update-btn">Update Bio</a>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="dropdown custom-dropdown">
-                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Followers
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                        <div class="dropdown-menu">
                             <ul class="list-group">
                                 {% for follower in user.userprofile.followers.all %}
                                 <li class="list-group-item">
@@ -78,10 +76,10 @@
                 </div>
                 <div class="col-md-3">
                     <div class="dropdown custom-dropdown">
-                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" id="followerDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-primary dropdown-toggle update-btn follow-dropdown-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Following
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="followerDropdown">
+                        <div class="dropdown-menu">
                             <ul class="list-group">
                                 {% for following in user.userprofile.following.all %}
                                     <li class="list-group-item">
