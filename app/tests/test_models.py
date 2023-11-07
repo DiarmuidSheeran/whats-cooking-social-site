@@ -29,3 +29,16 @@ class ModelTestCase(TestCase):
         self.assertEqual(post.title, 'Test Post')
         self.assertEqual(post.user.username, 'testuser')
         self.assertTrue(post.slug)
+
+    def test_comment_creation(self):
+        post = Post.objects.create(
+            title='Test Post',
+            user=self.user,
+            content='This is a test post content'
+        )
+        comment = Comment.objects.create(
+            post=post,
+            user=self.user,
+            content='This is a test comment'
+        )
+        self.assertEqual(str(comment), 'Comment by testuser on Test Post')
