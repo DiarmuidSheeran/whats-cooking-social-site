@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from django.shortcuts import render
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.landing, name="landing"),
@@ -64,3 +66,8 @@ urlpatterns = [
         name="password_reset_complete"
     ),
 ]
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+handler404 = custom_404
