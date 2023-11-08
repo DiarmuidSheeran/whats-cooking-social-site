@@ -115,6 +115,28 @@
 
 ![Post successfully deleted](documentation/testing/edit-posts/edit-post-delete-message.png "post-successfully-deleted")
 
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can succesfully be directed to a post edit page and edit the post they desire. The user can change all fields within the post. The user can choose to delete the post at anytime and is issued with a warning before deleting the post.
+
+## User Story Issue: Like Posts
+#### Problem Statement:
+* As a registered user, I can like or unlike posts so that I can interact with the content. of the site to enhance my experience.
+### Test:
+* **Test users can like or unlike posts, check that the like count of the posts changes:**
+
+![Unliked Post](documentation/testing/like-posts/like-btn-not-clicked.png "unliked-post")
+
+![Liked Post](documentation/testing/like-posts/like-btn-clicked.png "liked-post")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can succesfully click the like button on any post and heve their like recorded. Their count is added and the heart icon changes color. Alternatively the user click the button again to unlike the post and the button's count reverts back along with the icons color.
+
 ## User Story Issue: Add Comments to Posts
 #### Problem Statement: 
 * As a registered user, I can comment on posts so that I can interact with and express my opinion with users about their posts.
