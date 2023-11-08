@@ -184,7 +184,25 @@
 ## :technologist: Overall Result:
 * The user can succesfully click the follow button on a users post and the button will be updated to a unfollow button. The unfollow button can be clicked and the user will unfollow the designated user. The Following count is updated on the users profile page. The followed or not followed user is added or deleted from the users following dropdown menu depending on choice selected.
 
-## User Story Issue:
+## User Story Issue: Bio Section
+#### Problem Statement:
+* As a registered user, I can include a bio section so that I can share some personal details about me.
+### Test:
+* **Test users can successfully update their accounts bio from their profile page**
+
+![Update Bio Button](documentation/bio/update-bio-1-btn.png "update-bio-btn")
+
+![Update Bio Form](documentation/bio/update-bio-2-form.png "update-bio-form")
+
+![Update Bio Form Details](documentation/bio/update-bio-3-form-input.png "update-bio-form-details")
+
+![Bio Updated](documentation/bio/update-bio-4-updated-bio.png "bio-updated")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can succesfully click the bio button on their profile and they are redirected to update bio form page. The User can enter information into whatever fields the wish and click the update bio button. The User is redirected back to the profile page and their bio was succesfully updated.
 
 ## User Story Issue:
 
