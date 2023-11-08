@@ -75,6 +75,9 @@
 ### Result:
 * **Pass** :ok_hand:
 
+## :technologist: Overall Result:
+* Users can create posts and the posts are correctly placed on users feeds and profiles. Error handling is succesfully used to catch users not entering all details into text fields. File sizes that are too large are prohibeted from being uploaded to the site an error handling succesfully disables users abilities to upload large files.
+
 ## User Story Issue: Add Comments to Posts
 #### Problem Statement: 
 * As a registered user, I can comment on posts so that I can interact with and express my opinion with users about their posts.
@@ -86,9 +89,6 @@
 
 ### Result:
 * **Pass** :ok_hand:
-
-## :technologist: Overall Result:
-* Users can create posts and the posts are correctly placed on users feeds and profiles. Error handling is succesfully used to catch users not entering all details into text fields. File sizes that are too large are prohibeted from being uploaded to the site an error handling succesfully disables users abilities to upload large files.
 
 ### Test:
 * **Test posts with +2 or more comments have view more link:**
