@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io',
+    '8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu106.gitpod.io',
     'whats-cooking-socail-site-21a4223c5487.herokuapp.com',
     'localhost',
 ]
