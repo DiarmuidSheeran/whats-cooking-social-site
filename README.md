@@ -1,6 +1,7 @@
 # Whats Cooking Social Site
 * Insert Responsive image here
-* Insert Link to live site here
+#### Click the link below to view the live site:
+* [Whats Cooking Social Site](https://whats-cooking-socail-site-21a4223c5487.herokuapp.com/)
 ## Site Description :bowl_with_spoon: 
 * The goal of Whats Cookin is to be a social media site that puts an emphasis on users to share images of food they have prepared or food they are about to eat. 
 * The site allows users to create their own account, sign in and create their own posts to share on the site.
