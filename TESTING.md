@@ -49,6 +49,9 @@
 ### Result:
 * **Pass** :ok_hand:
 
+## :technologist: Overall Result:
+* User can succesfully sign up to create a new account. They can Login to their account and they can logout when needed. Appropriate error messages were displayed to users upon unsuccesfull or incomplete forms being submitted.
+
 ## User Story Issue:
 
 ## User Story Issue:
