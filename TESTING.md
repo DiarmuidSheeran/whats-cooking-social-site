@@ -78,6 +78,43 @@
 ## :technologist: Overall Result:
 * Users can create posts and the posts are correctly placed on users feeds and profiles. Error handling is succesfully used to catch users not entering all details into text fields. File sizes that are too large are prohibeted from being uploaded to the site an error handling succesfully disables users abilities to upload large files.
 
+## User Story Issue: Update Posts
+#### Problem Statement: 
+* As a registered user, I can update my posts so that I can edit or delete my content.
+
+### Test:
+* **Test edit post button directs users to the correct post to edit:**
+
+![Check Edit Button](documentation/testing/edit-posts/edit-post-1-btn.png "error-button-redirect")
+
+![Redirect to Correct Post](documentation/testing/edit-posts/edit-post-2-form.png "error-button-redirect-success")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test updated form fields on post to see if the post updates with new content**
+
+![Updated Form Fields](documentation/testing/edit-posts/edit-post-3-updated-form.png "updated-form-fields")
+
+![Updated Form Fields Success](documentation/testing/edit-posts/edit-post-4-updated.png "updated-form-fields-success")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test delete button on post navigates to deletion warning page.**
+
+![Navigate to delete post page](documentation/testing/edit-posts/edit-post-delete-page.png "navigate-to-post-deletion-page")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test delete button on warning page succesfully deletes post.**
+
+![Post successfully deleted](documentation/testing/edit-posts/edit-post-delete-message.png "post-successfully-deleted")
+
 ## User Story Issue: Add Comments to Posts
 #### Problem Statement: 
 * As a registered user, I can comment on posts so that I can interact with and express my opinion with users about their posts.
@@ -94,6 +131,7 @@
 * **Test posts with +2 or more comments have view more link:**
 
 ![View More](documentation/testing/comments/Comment-entered-3-view-more.png "view-more-on-post")
+
 ![View More Link](documentation/testing/comments/Comment-entered-4-view-more-click.png "view-more-link-successfull")
 
 ### Result:
