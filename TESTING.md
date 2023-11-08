@@ -162,7 +162,27 @@
 ## :technologist: Overall Result:
 * The User can successfully submit comments onto posts. They are succesfully redirected to the posts page. They can only see 2 comments per post on their feeds and can click view more to see all comments on the posts page.
 
-## User Story Issue:
+## User Story Issue: Follow other Users & View Follower Counts
+#### Problem Statement:
+* As a registered user, I can like or unlike posts so that I can interact with the content. of the site to enhance my experience.
+
+* As a registered user, I can view the total number of followers I have and the number of users I'm following so that I can monitor how my profile is doing. 
+### Test:
+* **Test users can follow or unfollow other users, Check that follower counts are updated on users profile, check user is added to following dropdown menu:**
+
+![Unfollowed User](documentation/testing/follow-users/follow-btn-1-unclicked.png "unfollowed-users-btn")
+
+![Followed User](documentation/testing/follow-users/follow-btn-1-clicked.png "followed-users")
+
+![Followed User Counts](documentation/testing/follow-users/follow-btn-3-chack-follower-count.png "followed-users-counts")
+
+![Followed User Dropdown Menu](documentation/testing/follow-users/follow-btn-4-chack-follower-dropdown.png "followed-users-dropdown")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can succesfully click the follow button on a users post and the button will be updated to a unfollow button. The unfollow button can be clicked and the user will unfollow the designated user. The Following count is updated on the users profile page. The followed or not followed user is added or deleted from the users following dropdown menu depending on choice selected.
 
 ## User Story Issue:
 
