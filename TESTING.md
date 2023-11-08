@@ -53,6 +53,28 @@
 * User can succesfully sign up to create a new account. They can Login to their account and they can logout when needed. Appropriate error messages were displayed to users upon unsuccesfull or incomplete forms being submitted.
 
 ## User Story Issue:
+#### Problem Statement: 
+* As a registered user, I can comment on posts so that I can interact with and express my opinion with users about their posts.
+### Test:
+* **Test users can comment on posts:**
+
+![Commet Entered](documentation/testing/comments/Comment-entered-1.png "comment-entered")
+![Comment Entered Succesfully](documentation/testing/comments/Comment-entered-2.png "succesfull-comment")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test posts with +2 or more comments have view more link:**
+
+![View More](documentation/testing/comments/Comment-entered-3-view-more.png "view-more-on-post")
+![View More Link](documentation/testing/comments/Comment-entered-4-view-more-click.png "view-more-link-successfull")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The User can successfully submit comments onto posts. They are succesfully redirected to the posts page. They can only see 2 comments per post on their feeds and can click view more to see all comments on the posts page.
 
 ## User Story Issue:
 
