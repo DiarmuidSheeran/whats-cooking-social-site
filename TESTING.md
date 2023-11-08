@@ -245,9 +245,43 @@
 ## :technologist: Overall Result:
 * The user can successfully update their account information, update their profile picture and delete their account. All of this can be achieved throught the settings page of the user account.
 
-## User Story Issue:
+## User Story Issue: Search Capabilities
+#### Problem Statement:
+* As a registered user I can search for users within the site so that I can easily find other users on the site.
 
-## User Story Issue:
+### Test:
+* **Test users abbility to search for other users on the site:**
+
+![User Search Bar](documentation/testing/search-user/search-users.png "user-search-bar")
+
+![Search Bar Entered Data](documentation/testing/search-user/search-users-2-name.png "search-bar-data-entered")
+
+![Search Results](documentation/testing/search-user/search-users-3-results.png "search-results")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can successfully search for other user profiles within the database.
+
+## User Story Issue: View Recipes
+#### Problem Statement:
+* As a registered user, I can view recipe ideas by entering food I want to use so that I can get inspiration for new ideas for my content.
+
+### Test:
+* **Test users abbility to search for recipes by entering food groups intop search bar**
+
+![Recipe Search Bar](documentation/testing/recipes/search-recipes.png "Recipe-search-bar")
+
+![Recipe Bar Entered Data](documentation/testing/recipes/search-recipes-2-input.png "Recipe-bar-data-entered")
+
+![Recipe Results](documentation/testing/recipes/search-recipes-3-results.png "Recipe-results")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can successfully search for recipes from the seacrh bar by entering a food group. The user can click on the recipe they like and will be directed to the recipes web page.
 
 ## User Story Issue:
 
