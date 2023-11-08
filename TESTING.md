@@ -190,13 +190,13 @@
 ### Test:
 * **Test users can successfully update their accounts bio from their profile page**
 
-![Update Bio Button](documentation/bio/update-bio-1-btn.png "update-bio-btn")
+![Update Bio Button](documentation/testing/bio/update-bio-1-btn.png "update-bio-btn")
 
-![Update Bio Form](documentation/bio/update-bio-2-form.png "update-bio-form")
+![Update Bio Form](documentation/testing/bio/update-bio-2-form.png "update-bio-form")
 
-![Update Bio Form Details](documentation/bio/update-bio-3-form-input.png "update-bio-form-details")
+![Update Bio Form Details](documentation/testing/bio/update-bio-3-form-input.png "update-bio-form-details")
 
-![Bio Updated](documentation/bio/update-bio-4-updated-bio.png "bio-updated")
+![Bio Updated](documentation/testing/bio/update-bio-4-updated-bio.png "bio-updated")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -211,11 +211,11 @@
 ### Test:
 * **Test users can successfully update their account information:**
 
-![Update Info Button](documentation/account-info/update-info-1-btn.png "update-info-btn")
+![Update Info Button](documentation/testing/account-info/update-info-1-btn.png "update-info-btn")
 
-![Update Info Form Filled](documentation/account-info/update-info-2-edit-info.png "update-info-form-filled")
+![Update Info Form Filled](documentation/testing/account-info/update-info-2-edit-info.png "update-info-form-filled")
 
-![Update Info Success](documentation/account-info/update-info-3-info-updated.png "update-info-success")
+![Update Info Success](documentation/testing/account-info/update-info-3-info-updated.png "update-info-success")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -223,11 +223,11 @@
 ### Test:
 * **Test users can update their profile picture:**
 
-![Update Profile Pic Button](documentation/account-info/update-profile-pic-1.png "update-pic-btn")
+![Update Profile Pic Button](documentation/testing/account-info/update-profile-pic-1.png "update-pic-btn")
 
-![Update Profile Pic Button Selected](documentation/account-info/update-profile-pic-2.png "update-profile-pic-button")
+![Update Profile Pic Button Selected](documentation/testing/account-info/update-profile-pic-2.png "update-profile-pic-button")
 
-![Update Profile Pic Success](documentation/account-info/update-profile-pic-3.png "update-profile-pic-success")
+![Update Profile Pic Success](documentation/testing/account-info/update-profile-pic-3.png "update-profile-pic-success")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -235,9 +235,9 @@
 ### Test:
 * **Test users can delete their account**
 
-![Redirect to Delete Account Page](documentation/account-info/delete-account-warning.png "delete-account-warning")
+![Redirect to Delete Account Page](ddocumentation/testing/account-info/delete-account-warning.png "delete-account-warning")
 
-![Account deletion success](documentation/account-info/account-deleted.png "account-updated-success")
+![Account deletion success](documentation/testing/account-info/account-deleted.png "account-updated-success")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -283,7 +283,35 @@
 ## :technologist: Overall Result:
 * The user can successfully search for recipes from the seacrh bar by entering a food group. The user can click on the recipe they like and will be directed to the recipes web page.
 
-## User Story Issue:
+## User Story Issue: Reset Password
+#### Problem Statement:
+* As a registered user I can reset my password so that if I forget my password I can regain access to my account.
+
+### Test:
+* **Test users abbility to reset their password**
+
+![ReSET Password Button](documentation/testing/reset-password/reset-password-1.png "reset-pwd-btn")
+
+![Email Form Filled](documentation/testing/reset-password/reset-password-2-enter-email.png "email-form-filled")
+
+![Email Sent Confirmation](documentation/testing/reset-password/reset-password-3-email-sent.png "email-sent-confirmation")
+
+![Email Recieved](documentation/testing/reset-password/reset-password-4-email-recieved.png "password-reset-email")
+
+![Password Reset Form](documentation/testing/reset-password/reset-password-5-reset-password-from-link.png "password-reset-form")
+
+![Password reset confiremd](documentation/testing/reset-password/reset-password-6-reset-password-confirmed.png "password-reset-confiremed")
+
+![New Password Test](documentation/testing/reset-password/reset-password-7-reset-password-working.png "new-password-test")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can successfully request a password reset to be sent to their email address. The email is delivered to the user. The User can click on the link provided in the email be directed to the password reset page. The user can reset their password and can access their account with their new password.
+
+
+
 
 ## User Story Issue:
 
