@@ -204,7 +204,46 @@
 ## :technologist: Overall Result:
 * The user can succesfully click the bio button on their profile and they are redirected to update bio form page. The User can enter information into whatever fields the wish and click the update bio button. The User is redirected back to the profile page and their bio was succesfully updated.
 
-## User Story Issue:
+## User Story Issue: Update or Delete User Information & Update Profile Picture
+#### Problem Statement:
+* As a registered user, I can edit or delete my profile information so that I can keep my personal information up to date and delete it if necessary.
+* As a registered user, I can upload my own profile picture so that I can add personalisation to my profile.
+### Test:
+* **Test users can successfully update their account information:**
+
+![Update Info Button](documentation/account-info/update-info-1-btn.png "update-info-btn")
+
+![Update Info Form Filled](documentation/account-info/update-info-2-edit-info.png "update-info-form-filled")
+
+![Update Info Success](documentation/account-info/update-info-3-info-updated.png "update-info-success")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test users can update their profile picture:**
+
+![Update Profile Pic Button](documentation/account-info/update-profile-pic-1.png "update-pic-btn")
+
+![Update Profile Pic Button Selected](documentation/account-info/update-profile-pic-2.png "update-profile-pic-button")
+
+![Update Profile Pic Success](documentation/account-info/update-profile-pic-3.png "update-profile-pic-success")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test users can delete their account**
+
+![Redirect to Delete Account Page](documentation/account-info/delete-account-warning.png "delete-account-warning")
+
+![Account deletion success](documentation/account-info/account-deleted.png "account-updated-success")
+
+### Result:
+* **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* The user can successfully update their account information, update their profile picture and delete their account. All of this can be achieved throught the settings page of the user account.
 
 ## User Story Issue:
 
