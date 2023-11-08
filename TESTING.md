@@ -52,7 +52,30 @@
 ## :technologist: Overall Result:
 * User can succesfully sign up to create a new account. They can Login to their account and they can logout when needed. Appropriate error messages were displayed to users upon unsuccesfull or incomplete forms being submitted.
 
-## User Story Issue:
+## User Story Issue: Create Posts.
+#### Problem Statement:
+* As a registered user, I can create posts so that I can share my content with the rest of the users on the site.
+### Test:
+* **Test users can can create posts**
+
+![Create Post Buttons](documentation/testing/create-posts/create-post-1-btn.png "create-post-buttons")
+
+![Create Post Form](documentation/testing/create-posts/create-post-2-form.png "create-post-form")
+![Post Created Successfully](documentation/testing/create-posts/create-post-5-post-created.png "post-created-successfully")
+
+### Result:
+* **Pass** :ok_hand:
+
+### Test:
+* **Test post creation errors wroking:**
+
+![Error For Text Fields](documentation/testing/create-posts/create-post-3-form-error.png "error-for-text-field")
+![Error for large file size](documentation/testing/create-posts/create-post-4-form-error-file-size.png "large-file-size-error")
+
+### Result:
+* **Pass** :ok_hand:
+
+## User Story Issue: Add Comments to Posts
 #### Problem Statement: 
 * As a registered user, I can comment on posts so that I can interact with and express my opinion with users about their posts.
 ### Test:
@@ -63,6 +86,9 @@
 
 ### Result:
 * **Pass** :ok_hand:
+
+## :technologist: Overall Result:
+* Users can create posts and the posts are correctly placed on users feeds and profiles. Error handling is succesfully used to catch users not entering all details into text fields. File sizes that are too large are prohibeted from being uploaded to the site an error handling succesfully disables users abilities to upload large files.
 
 ### Test:
 * **Test posts with +2 or more comments have view more link:**
