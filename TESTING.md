@@ -311,21 +311,3 @@
 * The user can successfully request a password reset to be sent to their email address. The email is delivered to the user. The User can click on the link provided in the email be directed to the password reset page. The user can reset their password and can access their account with their new password.
 
 
-
-
-## User Story Issue:
-
-## User Story Issue:
-
-## User Story Issue:
-
-## User Story Issue:
-
-## User Story Issue:
-
-## User Story Issue:
-
-## User Story Issue:
-
-
-
