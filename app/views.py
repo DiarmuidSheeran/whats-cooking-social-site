@@ -153,6 +153,9 @@ def follow_feed(request):
     Stores users in following_users Variable
     Searches the database for all posts filtered by following_user variable.
     Orders them in order of date created on.
+    Paginates the posts with 5 posts per page.
+    Retrieves the requested page number from the query parameters.
+    Handles exceptions for invalid page numbers or empty pages.
     Stores them in posts variable.
     posts stored in context dictionary
     context rendered with follow feed page.
