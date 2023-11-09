@@ -113,7 +113,9 @@ else:
 development = os.environ.get('DEVELOPMENT', False)
 
 if development:
-    ALLOWED_HOSTS = ['8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io']
+    ALLOWED_HOSTS = [
+        '8000-diarmuidshe-whatscookin-zbpbnfdniwd.ws-eu105.gitpod.io'
+    ]
 else:
     ALLOWED_HOSTS = ['whats-cooking-socail-site-21a4223c5487.herokuapp.com']
 """
