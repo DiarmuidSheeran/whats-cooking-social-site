@@ -35,78 +35,74 @@ Insert link to user stories here
 #### With the idea for the website planned, I began with drawing out with a pencil the concept idea for some of the different pages within the site.
 * Landing:
 
-![sign-up error](documentation/wireframes-drawing/landing-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/landing-paper.jpg "paper-wireframs")
 
 * Sign-up:
 
-![sign-up error](documentation/wireframes-drawing/signup-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/signup-paper.jpg "paper-wireframs")
 
 * Sign-in:
 
-![sign-up error](documentation/wireframes-drawing/sign-in-paper.jpg "sign-up-error")
+![sign-up error](documentation/wireframes-drawing/sign-in-paper.jpg "paper-wireframs")
 
 * Home Page:
 
-![sign-up error](documentation/wireframes-drawing/post-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/post-paper.jpg "paper-wireframs")
 
 * Profile Page:
 
-![sign-up error](documentation/wireframes-drawing/profile-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/profile-paper.jpg "paper-wireframs")
 
 * Reset Password Page:
 
-![sign-up error](documentation/wireframes-drawing/reset-password-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/reset-password-paper.jpg "paper-wireframs")
 
 * Settings Page:
 
-![sign-up error](documentation/wireframes-drawing/settings-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/settings-paper.jpg "paper-wireframs")
 
 * Update Info Page:
 
-![sign-up error](documentation/wireframes-drawing/update-info-paper.jpg "sign-up-error")
+![Paper Wireframes](documentation/wireframes-drawing/update-info-paper.jpg "paper-wireframs")
 
 ### I then began creating wireframes to depict a more narrowed down outlook for how the differnet pages depending on functionality should look throught the site:
 
 * Landing:
 
-![sign-up error](documentation/wireframe-digital/landing.jpg "sign-up-error")
+![Digital Wireframe](documentation/wireframe-digital/landing.jpg "digital-wireframe")
 
 * Form Pages: 
 
-![sign-up error](documentation/wireframe-digital/forms.jpg "sign-up-error")
-![sign-up error](documentation/wireframe-digital/sign-up-log-in.jpg "sign-up-error")
+![Digital Wireframe](documentation/wireframe-digital/forms.jpg "digital-wireframe")
+![Digital Wireframe](documentation/wireframe-digital/sign-up-log-in.jpg "digital-wireframe")
 
 * Feed Pages:
 
-![sign-up error](documentation/wireframe-digital/posts-pages.jpg "sign-up-error")
+![Digital Wireframe](documentation/wireframe-digital/posts-pages.jpg "digital-wireframe")
 
 * Search Pages:
 
-![sign-up error](documentation/wireframe-digital/search-user.jpg "sign-up-error")
+![Digital Wireframe](documentation/wireframe-digital/search-user.jpg "digital-wireframe")
 
-![sign-up error](documentation/wireframe-digital/search-recipe.jpg "sign-up-error")
+![Digital Wireframe](documentation/wireframe-digital/search-recipe.jpg "digital-wireframe")
 
 * Settings Page:
 
-![sign-up error](documentation/wireframe-digital/settings.jpg "sign-up-error")
+![Settings Wireframe](documentation/wireframe-digital/settings.jpg "settings wireframe")
 
 * Profile Page:
 
-![sign-up error](documentation/wireframe-digital/profile-page.jpg "sign-up-error")
+![Profile Wireframe](documentation/wireframe-digital/profile-page.jpg "profile-wireframe")
 
 ### Colors
 
 * I have incorporated a carefully selected color palette throughout the website, aimed at creating a visually appealing design, allowing for a more streamlined and user-friendly experience.
 
-insert image of color pallete.
+![Color Pallete](documentation/color/color-pallete.png "color-pallete")
 
 ### Data Models
 
 insert image of models plan
-
-### Typography 
-
-* The google font ____ was used throught the site.
 
 ## Site Look and Features
 
