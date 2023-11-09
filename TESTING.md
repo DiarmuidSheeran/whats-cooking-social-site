@@ -310,57 +310,82 @@
 ## :technologist: Overall Result:
 * The user can successfully request a password reset to be sent to their email address. The email is delivered to the user. The User can click on the link provided in the email be directed to the password reset page. The user can reset their password and can access their account with their new password.
 
+# Validators :man_mechanic:
+
+* As Part of testing my site I tested my code on various validators. 
+## W3Markup Html Validation
+[A link to W3Markups website](https://validator.w3.org/)
+
+* The images below repersent the source code of my templates passing the tests of the W3markup Validator
+
+### Bio
+![Validator Test](documentation/validator-results-html/bio.png "html-validator-test")
+
+### Create Post
+![Validator Test](documentation/validator-results-html/create-post.png "html-validator-test")
+
+### Delete Post
+![Validator Test](documentation/validator-results-html/delete-post.png "html-validator-test")
+
+### Error 404
+![Validator Test](documentation/validator-results-html/error-404.png "html-validator-test")
+
+### Error 500
+![Validator Test](documentation/validator-results-html/error-500.png "html-validator-test")
+
+### Follow Feed
+![Validator Test](documentation/validator-results-html/follow-feed.png "html-validator-test")
+
+### Index/Home
+![Validator Test](documentation/validator-results-html/index.png "html-validator-test")
+
+### Landing
+![Validator Test](documentation/validator-results-html/landing.png "html-validator-test")
+
+### Login
+![Validator Test](documentation/validator-results-html/login.png "html-validator-test")
+
+### Password Reset Complete
+![Validator Test](documentation/validator-results-html/password-reset-complete.png "html-validator-test")
+
+### Password Reset Sent
+![Validator Test](documentation/validator-results-html/password-reset-sent.png "html-validator-test")
+
+### Password Reset
+![Validator Test](documentation/validator-results-html/password-rest.png "html-validator-test")
+
+### Post
+![Validator Test](documentation/validator-results-html/post.png "html-validator-test")
+
+### Recipes
+![Validator Test](documentation/validator-results-html/recipes.png "html-validator-test")
+
+### Settings
+![Validator Test](documentation/validator-results-html/settings.png "html-validator-test")
+
+### Sign up
+![Validator Test](documentation/validator-results-html/signup.png "html-validator-test")
+
+### Other User Profiles
+![Validator Test](documentation/validator-results-html/un-auth-user-profile.png "html-validator-test")
+
+### Update Info
+![Validator Test](documentation/validator-results-html/update-info.png "html-validator-test")
+
+### Update Post
+![Validator Test](documentation/validator-results-html/update-post.png "html-validator-test")
+
+### Search Results
+![Validator Test](documentation/validator-results-html/user-search-results.png "html-validator-test")
+
+### User Search
+![Validator Test](documentation/validator-results-html/user-search.png "html-validator-test")
+
+### User Profile
+![Validator Test](documentation/validator-results-html/users-profile.png "html-validator-test")
 
 # Lighthouse Tests 	:tokyo_tower:
 
 * As Part of testing my site i put each of my templates through the lighthouse testing service on chromes dev tools the results can be seen below:
 
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-###
-![]( "")
-
-# Validators :man_mechanic:
-
-* As Part of testing my site I tested my code on various validators. These included:
 
