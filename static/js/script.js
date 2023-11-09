@@ -1,4 +1,4 @@
-$(document).ready(function ($) {
+(document).ready(function ($) {
   //Create Event handler for elements within class like-form
     $(".like-form").on("click", function(event) {
       // Prevents default actions being run
@@ -42,7 +42,7 @@ $(document).ready(function ($) {
     });
 });
 
-$(document).ready(function ($) {
+(document).ready(function ($) {
   //Create Event handler for elements within class follow-form
   $(".follow-form").on("click", function(event) {
     // Prevents default actions being run
