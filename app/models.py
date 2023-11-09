@@ -3,10 +3,15 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 
-# Create your models here.
+# Create your models here
 
 
 class UserProfile(models.Model):
+    """
+    Model for user profile information, including first name (fname),
+    last name (lname), profile picture (profile_pic), followers,
+    following users, bio, and social media links.
+    """
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     fname = models.CharField(max_length=200, null=True)
     lname = models.CharField(max_length=200, null=True)
@@ -40,6 +45,11 @@ class UserProfile(models.Model):
 
 
 class Post(models.Model):
+    """
+    Model representing a social media post, including title,
+    slug, user who created the post, content, featured image,
+    creation date and likes.
+    """
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=200, unique=True, default='')
     user = models.ForeignKey(
@@ -67,6 +77,10 @@ class Post(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
+        """
+        Custom save method to generate a unique slug for the post
+        based on its title.
+        """
         if not self.slug:
             base_slug = slugify(self.title)
             unique_slug = base_slug
@@ -82,6 +96,11 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Model representing a comment on a social media post,
+    including the post it belongs to, the user who
+    made the comment, content, and creation date.
+    """
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
@@ -93,4 +112,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.post.title}"
-
