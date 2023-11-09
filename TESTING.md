@@ -424,8 +424,16 @@
 
 * The images below repersent the sites script code passing the tests of the Js hint Javascript Validator
 
-### Views.py
+### Script.js
 ![Validator Test](documentation/validator-results-script/script-validator.png "script-validator-test")
+
+## Jigsaw Css Validator
+[A link to Js Hint Css Validator Site](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+* The images below repersent the sites styles code passing the tests of the Jigsaw Css Validator
+
+### Styles.css
+![Validator Test](documentation/validator-results-css/css-validation.png "css-validator-test")
 
 # Lighthouse Tests 	:tokyo_tower:
 
