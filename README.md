@@ -164,7 +164,7 @@ insert image of models plan
 * **Delete account**
 
 ## Testing
-* [Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
+[Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
 
 ## Technolgies Used:
 ### Languages:

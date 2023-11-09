@@ -143,8 +143,8 @@
 ### Test:
 * **Test users can comment on posts:**
 
-![Commet Entered](documentation/testing/comments/Comment-entered-1.png "comment-entered")
-![Comment Entered Succesfully](documentation/testing/comments/Comment-entered-2.png "succesfull-comment")
+![Commet Entered](documentation/testing/comments/comment-entered-1.png "comment-entered")
+![Comment Entered Succesfully](documentation/testing/comments/comment-entered-2.png "succesfull-comment")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -152,9 +152,9 @@
 ### Test:
 * **Test posts with +2 or more comments have view more link:**
 
-![View More](documentation/testing/comments/Comment-entered-3-view-more.png "view-more-on-post")
+![View More](documentation/testing/comments/comment-entered-3-view-more.png "view-more-on-post")
 
-![View More Link](documentation/testing/comments/Comment-entered-4-view-more-click.png "view-more-link-successfull")
+![View More Link](documentation/testing/comments/comment-entered-4-view-more-click.png "view-more-link-successfull")
 
 ### Result:
 * **Pass** :ok_hand:
@@ -235,7 +235,7 @@
 ### Test:
 * **Test users can delete their account**
 
-![Redirect to Delete Account Page](ddocumentation/testing/account-info/delete-account-warning.png "delete-account-warning")
+![Redirect to Delete Account Page](documentation/testing/account-info/delete-account-warning.png "delete-account-warning")
 
 ![Account deletion success](documentation/testing/account-info/account-deleted.png "account-updated-success")
 
