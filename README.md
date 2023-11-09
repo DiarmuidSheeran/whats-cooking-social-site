@@ -27,7 +27,7 @@
 **By following this Agile approach, I have aimed to deliver a high-quality, user-focused social site to meet user expectations and deliver a compelling online experience.** :grin: 
 
 ### The project contains 15 user story issues which can be found here: 
-Insert link to user stories here
+[Link to projects user stories](https://github.com/users/DiarmuidSheeran/projects/5/views/1)
 * Please not that due to ammendmants throught the project the id numbers are no longer sequenced.
 
 ## Project Design:
