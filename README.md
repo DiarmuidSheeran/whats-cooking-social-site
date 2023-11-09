@@ -100,9 +100,11 @@
 
 ![Color Pallete](documentation/color/color-pallete.png "color-pallete")
 
-### Data Models
+### Database
 
-insert image of models plan
+* The project relies on a PostgreSQL database hosted on ElephantSQL. Its web interface features a convenient SQL query console. The Database URL, inclusive of the API key, is securely stored as an environment variable within the Heroku platform.
+
+![Database Schema](documentation/database/schema.jpg "data-base-schema")
 
 ## Site Look and Features
 
