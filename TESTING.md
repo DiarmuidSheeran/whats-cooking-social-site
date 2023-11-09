@@ -387,7 +387,7 @@
 ## Ci Python Linter Python Code Validator
 [A link to Ci python linter site](https://pep8ci.herokuapp.com/)
 
-* The images below repersent the source code of my templates passing the tests of the Ci python linter Validator
+* The images below repersent the sites python code passing the tests of the Ci python linter Validator
 
 ### Decorator.py
 ![Validator Test](documentation/testing/validator-results-python/decorator-linter.png "python-validator-test")
@@ -418,6 +418,14 @@
 
 ### Views.py
 ![Validator Test](documentation/testing/validator-results-python/views-linter.png "python-validator-test")
+
+## Js Hint Javascript Code Validator
+[A link to Js Hint Javascript Validator Site](https://jshint.com/)
+
+* The images below repersent the sites script code passing the tests of the Js hint Javascript Validator
+
+### Views.py
+![Validator Test](documentation/validator-results-script/script-validator.png "script-validator-test")
 
 # Lighthouse Tests 	:tokyo_tower:
 
