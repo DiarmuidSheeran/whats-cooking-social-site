@@ -35,33 +35,37 @@ Insert link to user stories here
 #### With the idea for the website planned, I began with drawing out with a pencil the concept idea for some of the different pages within the site.
 * Landing:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/landing-paper.jpg "sign-up-error")
 
 * Sign-up:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/signup-paper.jpg "sign-up-error")
 
 * Sign-in:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/sign-in-paper.jpg "sign-up-error")
 
 * Home Page:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/post-paper.jpg "sign-up-error")
 
 * Profile Page:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/profile-paper.jpg "sign-up-error")
 
-* Create Post Page:
+* Reset Password Page:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/reset-password-paper.jpg "sign-up-error")
 
 * Settings Page:
 
-insert image
+![sign-up error](documentation/wireframes-drawing/settings-paper.jpg "sign-up-error")
 
-#### I then began creating wireframes to depict a more narrowed down outlook for how the differnet pages depending on functionality should look throught the site:
+* Update Info Page:
+
+![sign-up error](documentation/wireframes-drawing/update-info-paper.jpg "sign-up-error")
+
+### I then began creating wireframes to depict a more narrowed down outlook for how the differnet pages depending on functionality should look throught the site:
 
 * Landing:
 
