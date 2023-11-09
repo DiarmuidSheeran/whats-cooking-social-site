@@ -158,9 +158,21 @@ def follow_feed(request):
     context rendered with follow feed page.
     """
     following_users = request.user.userprofile.following.all()
-    posts = Post.objects.filter(user__in=following_users).order_by(
+    posts_list = Post.objects.filter(user__in=following_users).order_by(
         '-created_on'
     )
+
+    posts_per_page = 5
+
+    paginator = Paginator(posts_list, posts_per_page)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
 
     context = {
         'posts': posts,
