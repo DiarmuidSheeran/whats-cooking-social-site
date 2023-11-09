@@ -19,6 +19,11 @@ import requests
 from django.http import JsonResponse
 from django.contrib import messages
 from django.template.defaultfilters import filesizeformat
+from django.core.paginator import (
+    Paginator,
+    EmptyPage,
+    PageNotAnInteger
+) 
 
 
 # Create your views here.
@@ -114,11 +119,26 @@ def index(request):
     Renders the home page of the site.
     Searches the database for all posts.
     Orders them in order of date created on.
+    Paginates the posts with 5 posts per page.
+    Retrieves the requested page number from the query parameters.
+    Handles exceptions for invalid page numbers or empty pages.
     Stores them in posts variable.
     posts stored in context dictionary
     context rendered with index page.
     """
-    posts = Post.objects.all().order_by('-created_on')
+    posts_list = Post.objects.all().order_by('-created_on')
+    posts_per_page = 5
+
+    paginator = Paginator(posts_list, posts_per_page)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     context = {
         'posts': posts,
     }
