@@ -65,23 +65,30 @@ insert image
 
 * Landing:
 
-insert image
+![sign-up error](documentation/wireframe-digital/landing.jpg "sign-up-error")
 
 * Form Pages: 
 
-insert image
+![sign-up error](documentation/wireframe-digital/forms.jpg "sign-up-error")
+![sign-up error](documentation/wireframe-digital/sign-up-log-in.jpg "sign-up-error")
 
 * Feed Pages:
 
-insert image
+![sign-up error](documentation/wireframe-digital/posts-pages.jpg "sign-up-error")
 
-* Message Pages:
+* Search Pages:
 
-insert image
+![sign-up error](documentation/wireframe-digital/search-user.jpg "sign-up-error")
 
-* Searcg Pages:
+![sign-up error](documentation/wireframe-digital/search-recipe.jpg "sign-up-error")
 
-insert image
+* Settings Page:
+
+![sign-up error](documentation/wireframe-digital/settings.jpg "sign-up-error")
+
+* Profile Page:
+
+![sign-up error](documentation/wireframe-digital/profile-page.jpg "sign-up-error")
 
 ### Colors
 
