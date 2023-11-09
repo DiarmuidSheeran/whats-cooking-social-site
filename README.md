@@ -108,62 +108,77 @@
 
 ## Site Look and Features
 
-### Pages
+### Landing page:
+* **Features**
 
-* **Landing page:**
+![Landing](documentation/pages/landing.png "landing")
 
-* **Sign up page**
+### Sign up page
+* **Features**
 
-* **Log in page**
 
-* **Reset password pages**
+![](documentation/pages/signup.png "")
 
-* **Index/Home page**
+### Log in page
+* **Features**
 
-* **Following page**
+![](documentation/pages/login.png "")
 
-* **Profile page**
+### Reset password pages
+* **Features**
 
-* **Users profile page**
+![](documentation/pages/reset-password.png "")
+![](documentation/pages/password-sent.png "")
+![]( "")
+![]( "")
 
-* **Edit bio page**
+### Index/Home page
+* **Features**
 
-* **Recipe page**
+![](documentation/pages/index.png "")
 
-* **User search page**
+### Following page
+* **Features**
 
-* **Create post page**
+![](documentation/pages/followfeed.png "")
 
-* **Edit post page**
+### Profile page
+* **Features**
 
-* **Post's page**
+![](documentation/pages/profile-user.png "")
 
-* **Settings page**
+### Users profile page
+* **Features**
 
-* **Edit info page**
+![](documentation/pages/profile.png "")
 
-### Features
-* **Signup**
+### Recipe page
+* **Features**
 
-* **Login**
+![](documentation/pages/recipe-search.png "")
+![](documentation/pages/recipe-search-results.png "")
 
-* **Create a post**
+### User search page
+* **Features**
 
-* **Edit a post**
+![](documentation/pages/search-user.png "")
+![](documentation/pages/search-user-result.png "")
 
-* **Like/unlike a post**
+### Create post page
+* **Features**
 
-* **Comment on a post**
+![](documentation/pages/create-post.png "")
 
-* **Delete a post**
+### Edit post page
+* **Features**
 
-* **Follow/unfollow users**
+![](documentation/pages/edit-post-one.png "")
+![](documentation/pages/edit-post-two.png "")
 
-* **Edit bio**
+### Settings page
+* **Features**
 
-* **Update user info**
-
-* **Delete account**
+![](documentation/pages/settings.png "")
 
 ## Testing
 [Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
