@@ -258,6 +258,13 @@
 ![Site Features](documentation/pages/post-description.png "site-features")
 ![Site Features](documentation/pages/post-description-2.png "site-features")
 
+### Error pages
+* **Features**
+    * Two custom error pages were added to the site. Each of the error pages will dispay that their has been an error with their request and a link is also displayed that when clicked will redirect the user back to the index page.
+
+![Site Features](documentation/pages/error-404.png "site-features")
+![Site Features](documentation/pages/error-500.png "site-features")
+
 ## Testing
 [Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
 
