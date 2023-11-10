@@ -435,8 +435,73 @@
 ### Styles.css
 ![Validator Test](documentation/validator-results-css/css-validation.png "css-validator-test")
 
-# Lighthouse Tests 	:tokyo_tower:
+# Lighthouse Tests 	:lighthouse:
 
 * As Part of testing my site i put each of my templates through the lighthouse testing service on chromes dev tools the results can be seen below:
 
+### Create Post-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/create-post-lighthouse.png "lighthouse-test")
+
+### Delete-Account-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/delete-account-lighthouse.png "lighthouse-test")
+
+### Delete Post-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/delete-post-lighthouse.png "lighthouse-test")
+
+### Edit Post-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/edit-post-lighthouse.png "lighthouse-test")
+
+### Follow Feed-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/follow-feed-lighthouse.png "lighthouse-test")
+
+### Index/Home-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/index-lighthouse.png "lighthouse-test")
+
+### Landing-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/landing-lighthouse.png "lighthouse-test")
+
+### -Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/login-lighthouse.png "lighthouse-test")
+
+### Non User Profile-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/non-users-profile.png "lighthouse-test")
+
+### Password Reset Complete-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/password-reset-complete.png "lighthouse-test")
+
+### Password Reset Complete-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/password-sent-lighthouse.png "lighthouse-test")
+
+### Post-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/post-lighthouse.png "lighthouse-test")
+
+### Recipe-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/recipe-search.png "lighthouse-test")
+
+### Reset Password Form-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/reset-password-form.png "lighthouse-test")
+
+### Reset Password-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/reset-password-lighthouse.png "lighthouse-test")
+
+### Search Results-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/search-results-lighthouse.png "lighthouse-test")
+
+### Settings-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/settings-lighthouse.png "lighthouse-test")
+
+### Signup-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/signup-lighthouse.png "lighthouse-test")
+
+### Update Bio-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/update-bio-lighthouse.png "lighthouse-test")
+
+### Update Info-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/update-info-lighthouse.png "lighthouse-test")
+
+### User Profile-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/user-profile-page-lighthouse.png "lighthouse-test")
+
+### User Search-Lighthouse
+![Lighthouse Results](documentation/testing/lighthouse-results/user-search-lighthouse.png "lighthouse-test")
 
