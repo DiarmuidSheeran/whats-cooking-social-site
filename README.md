@@ -347,7 +347,7 @@
     7. Add Heroku Hostname to ALLOWED_HOSTS: ALLOWED_HOSTS = ['favoureats.herokuapp.com', 'localhost']
 
 * **Create Procfile**
-    1.  Create Procfile
+    1. Create Procfile
     2. Add the following code: web: gunicorn favoureats .wsgi
 
 * **Create Heroku app**
@@ -365,11 +365,45 @@
 
 ## Credits
 
-* insert info here
+1. **Books**
+    * [Python Crash Course for Begginers](https://www.amazon.co.uk/Python-Crash-Course-2nd-Edition/dp/1593279280/ref=sr_1_3?crid=1NT3V3JDTP1FO&keywords=python+programming+for+beginners&qid=1699623185&sprefix=python%2Caps%2C51&sr=8-3)
+
+2. **Online Resources**
+    * [Code Institutes Course Content](https://codeinstitute.net/ie/)
+
+    * [W3 School](https://www.w3schools.com/)
+
+    * [Stackoverflow](https://stackoverflow.com/)
+
+    * [Bootstrap](https://getbootstrap.com/)
+
+3. **Video Resources**
+    * [Codemy.com Django Build Twitter Youtube Playlist](https://www.youtube.com/watch?v=KXunlJgeRcU&list=PLCC34OHNcOtoQCR6K4RgBWNi3-7yGgg7b)
+
+    * [Dennis Ivy's Django Tutorial Youtube Playlist](https://www.youtube.com/watch?v=xv_bwpA_aEA&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO)
+
+    * [The Dumbfounds Python Testing Video Tutorials](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=34&t=202s)
+
+    * [Digital World's Sending Emails Youtube Tutorial](https://www.youtube.com/watch?v=Y-3Yc7SYWkI&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=31)
+
+    * [Digital worlds Password Rest Youtube Tutorial](https://www.youtube.com/watch?v=hnfwCFRKqh8&list=PLdK_jsurke3Jv5Z4TE2Z67xreXspgygL8&index=30&t=234s)
+
+    * [Problem Solving Point Api Youtube tutorial](https://www.youtube.com/watch?v=sgEhb50YSTE&t=6s)
+
+    * [CodingEntrepreneurs Ajax Like Button Youtube Tutorial](https://www.youtube.com/watch?v=pkPRtQf6oQ8&t=872s)
+
+4. **Images**
+    * [Landing Page Image](https://www.wallpaperflare.com/paprika-pepper-water-splash-veg-vegetable-spice-splashing-wallpaper-aefgk)
 
 ## Acknowledgements
 
-* insert info here
+### I would like to give a hugh shout out to:
+
+* my mentor Derek McAuley and my course leader Alan Bushell for all of their help throught the project. Their insights, suggestions and help throught the project aided in getting it to the finish line. Thank you
+
+### I would also like to thank:
+
+* any of my friends and family that signed up to the site to test it. Your help has been noted and is much appreciated.
 
 
 
