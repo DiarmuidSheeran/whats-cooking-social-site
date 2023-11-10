@@ -1,8 +1,17 @@
+# Automated Testing :man_mechanic:
+
+#### As part of my project I decided to implement some automated testing into my project.
+
+#### Unit testing was employed for automated testing, encompassing the examination of URLs, models, forms, and views. The testing process resulted in an attainment of 72% coverage. The comprehensive coverage report is as follows:
+
+![Automated Test](documentation/testing/automated-testing/test-ran.png "automated-test")
+![Coverage Report](documentation/testing/automated-testing/coverage-report.png "coverage-report")
+
 # Manual Testing :man_mechanic:
 
-#### As the developer, I conducted extensive testing along with the invaluable feedback from friends and family to ensure the site's features functioned flawlessly.
+#### As the developer, I conducted extensive testing along with the invaluable feedback from friends and family who signed up to the site to ensure the site's features functioned as flawlessly as possible.
 #### The project's user stories detailed the features that needed to be tested. Below, you'll find a list of the user stories, the issues they encompassed, and their corresponding grades after testing.
-![]( "")
+
 ## User Story Issue: User Registration and Authentication
 #### Problem Statement: 
 * As a site user I can login or create an account and logout so that I can view my content and other users content and choose to logout when finished. 
