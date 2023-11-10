@@ -288,28 +288,80 @@
 * Elephant Sql
 
 ## Deployment
-1. **Cerate Django app**
-* insert info here
-2. **Create Heroku app**
-* insert info here
-3. **Create Database**
-* insert info here
-4. **Set up Enviorment Variables**
-* insert info here
-5. **Connect Enviorment Variables to Django app**
-* insert info here
-6. **Make Migrations**
-* insert info here
-7. **Create media, static and tmeplate folders**
-* insert info here
-8. **Create procfile**
-* insert info here
-9. **Push changes to github**
-* insert info here
-10. **Heroku Deployment**
-* insert info here
-11. **Final Deployment**
-* insert info here
+* **Cerate Django app**
+    1. Install Django and gunicorn: pip3 install django gunicorn
+    2. Install supporting database libraries dj_database_url and psycopg2 library: pip3 install dj_database_url psycopg2
+    3. Install Cloudinary libraries: pip3 install dj-3-cloudinary-storage
+    4. Create file for requirements: pip freeze --local > requirements.txt
+    5. Create project: django-admin startproject project_name
+    6. Create app: python3 manage.py startapp app_name
+    7. Add app to list of installed apps in settings.py file: 'app_name'
+    8. Migrate changes: manage.py migrate
+    9. Run the server to test if the app is installed: python3 manage.py runserver
+
+* **Create Database**
+    1. Navigate to elephant sql site.
+    2. Login or sign up
+    3. Create a new instance
+    4. Give your plan a Name (this is commonly the name of the project)
+    5. Select the Tiny Turtle (Free) plan
+    6. Select your region
+    7. Create instance
+    8. Copy the database url
+
+* **Link database to site**
+    1. Back in your project comment out the default database in settings.py 
+    2. Add following code: DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+    3. Create an env.py file and add the following code: os.environ["DATABASE_URL"] = ('your_url')
+    4. Replace your_url with the database url copied from elephant sql
+    5. In your settings.py file follow the same steps to hide your secrect key within the env file
+    6. Make the migrations to the database: python3 manage.py makemigrations
+    7. Migrate Changes: python manage.py migrate
+
+* **Connect Project to Cloudinary**
+    1. Set up cloudinary account
+    2. From the dashboard on cloudinary copy the url.
+    3. Add the url to the env file: os.environ["CLOUDINARY_URL"] = "cloudinary://<insert-your-url>"
+    4. Add Cloudinary libraries to installed apps section of settings.py in this order: 'cloudinary_storage','django.contrib.staticfiles'', 'cloudinary'
+    5. Connect Cloudinary to the Django app in settings.py
+
+        STATIC_URL = '/static/'
+
+        STATICFILES_STORAGE = (
+
+            'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
+        )
+
+        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+        MEDIA_URL = '/media/'
+
+        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    
+    6. Change the templates directory to TEMPLATES_DIR. Place within the TEMPLATES array: 'DIRS': [TEMPLATES_DIR]
+    7. Add Heroku Hostname to ALLOWED_HOSTS: ALLOWED_HOSTS = ['favoureats.herokuapp.com', 'localhost']
+
+* **Create Procfile**
+    1.  Create Procfile
+    2. Add the following code: web: gunicorn favoureats .wsgi
+
+* **Create Heroku app**
+    1. Navigate to heroku.com & log in
+    2. Click "new" and create a new App
+    3. Give the application a name and then choose your region and Click "Create app"
+    4. On the next page click on the Settings tab to adjust the settings
+    5. Click on the 'config vars' button
+    6. Supply a your KEY, Cloudinary url and database url.
+    7. Add DISABLE_COLLECTSTATIC with value of '1' (note: this must be removed for final deployment)
+    8. Navigate to Deploy section of github
+    9. To connect with github select github and confirm
+    10. Search for your repository select it and click connect
+    11. Click manual deployment which deploys the current state of a branch. (DO NOT DEPLOY code with debug turned on) 
 
 ## Credits
 
