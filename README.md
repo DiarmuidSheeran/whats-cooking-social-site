@@ -1,5 +1,5 @@
 # Whats Cooking Social Site
-* Insert Responsive image here
+![Responsive Design](documentation/responsive-design.png "responsive-design")
 #### Click the link below to view the live site:
 * [Whats Cooking Social Site](https://whats-cooking-socail-site-21a4223c5487.herokuapp.com/)
 ## Site Description :bowl_with_spoon: 
@@ -280,13 +280,20 @@
 * Django
 * Bootstrap
 
-### Other Technolgies: 
-* Cloudinary 
-* Gitpod
-* GitHub 
-* Heroku 
-* Elephant Sql
-
+### Other Technolgies:
+* [Cloudinary](https://cloudinary.com/)- To host static files
+* [Gitpod](https://www.gitpod.io/)- For writing and test code
+* [GitHub](https://github.com/)- For hosting the source code
+* [Heroku](https://id.heroku.com/)- Used for deploying the project
+* [Elephant Sql](https://customer.elephantsql.com/)- Used for hosting the database
+* [Fontawesome](https://fontawesome.com/)- Used for icon within the site
+* [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)- Used for testing the site
+* [W3C Markup Validation Service](https://validator.w3.org/)- Used to validate the html
+* [W3C CSS Validation Service(Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_input)- Used for validating the css
+* [PEP8 linter](https://pep8ci.herokuapp.com/)- Used for validating the python code
+* [Js hint](https://jshint.com/)- Used for validating the javascript code
+* Microsoft Paint was used in the making of the wireframes and responsive design banner
+ 
 ## Deployment
 * **Cerate Django app**
     1. Install Django and gunicorn: pip3 install django gunicorn
