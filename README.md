@@ -115,7 +115,7 @@
     * The Login button and Sign up button redirects users to the each of the different pages.
     * The Logo in the nav bar is also a link to reload the landing page.
 
-![Landing](documentation/pages/landing.png "landing")
+![Site Features](documentation/pages/landing.png "site-features")
 
 ### Sign up page
 * **Features**
@@ -125,7 +125,7 @@
     * If a user dosent fill the form correctly the signup page will be loaded again with error messages detailing what they have failed to enter correctly.
     * Underneath the form a login link can be found that when clicked the user is redirected to the to the login page.
 
-![](documentation/pages/signup.png "")
+![Site Features](documentation/pages/signup.png "site-features")
 
 ### Log in page
 * **Features**
@@ -134,7 +134,7 @@
     * In the event a user forgets their password a password reset link is displayed under the form which directs the user to the reset password page.
     * If the user dosent have an account their is second link that allows the user to be directed to the signup page.
 
-![](documentation/pages/login.png "")
+![Site Features](documentation/pages/login.png "site-features")
 
 ### Reset password pages
 * **Features**
@@ -144,10 +144,10 @@
     * Once the user clicks the link they are redirected back to the a password reset page where they can enter a new password.
     * Once the new password is created the user is directed to a success message page with a login button that they can use to direct them to the login page.
 
-![](documentation/pages/reset-password.png "")
-![](documentation/pages/password-sent.png "")
-![](documentation/testing/reset-password/reset-password-5-reset-password-from-link.png "")
-![](documentation/pages/reset-password-success.png "")
+![Site Features](documentation/pages/reset-password.png "site-features")
+![Site Features](documentation/pages/password-sent.png "site-features")
+![Site Features](documentation/testing/reset-password/reset-password-5-reset-password-from-link.png "site-features")
+![Site Features](documentation/pages/reset-password-success.png "site-features")
 
 ### Index/Home page
 * **Features**
@@ -165,7 +165,7 @@
 * **Features**
     * The follow feed acts just as the index page does but is a filltered list of paginated posts tailered to the users that the authenticated user follows.
 
-![](documentation/pages/index.png "")
+![Site Features](documentation/pages/index.png "site-features")
 
 
 ### Profile page
@@ -177,7 +177,7 @@
     * All of the posts that the users have posted to the site can be viewed and are clickable links to that posts page.
     * The user can also follow or unfollow other users using the follow buttun underneath the users profile picture.
 
-![](documentation/pages/profile-user.png "")
+![Site Features](documentation/pages/profile-user.png "site-features")
 
 ### Users profile page
 * **Features**
@@ -185,8 +185,8 @@
     * The follow button is also removed from this page to ensure users dont follow themselves. 
     * Upon successfull edit the user is directed back to their profile where the updated bio can be seen.
 
-![](documentation/pages/profile.png "")
-![](documentation/pages/bio.png "")
+![Site Features](documentation/pages/profile.png "site-features")
+![Site Features](documentation/pages/bio.png "site-features")
 
 
 ### Recipe page
@@ -195,8 +195,8 @@
     * An api request is used to gather search results on items of food that the user enter.
     * The request gives the user a list of different recipes that can be made with the entered food. Each item has a title and picture and they are all clickable links to differnet websites that display the recipe.
 
-![](documentation/pages/recipe-search.png "")
-![](documentation/pages/recipe-search-results.png "")
+![Site Features](documentation/pages/recipe-search.png "site-features")
+![Site Features](documentation/pages/recipe-search-results.png "site-features")
 
 ### User search page
 * **Features**
@@ -205,8 +205,8 @@
     * The database is searched for all possible results and a list of viable users shown to the user.
     * Each username is a clickable link and directs the user to that user profile page.
 
-![](documentation/pages/search-user.png "")
-![](documentation/pages/search-user-result.png "")
+![Site Features](documentation/pages/search-user.png "site-features")
+![Site Features](documentation/pages/search-user-result.png "site-features")
 
 ### Create post page
 * **Features**
@@ -217,7 +217,7 @@
     * Error handling was implented to ensure the cant enter file sizes that are too large.
     * Once the post is created the user is directed back to the index page with a success message indicating that they have succesfully uploaded their post.
 
-![](documentation/pages/create-post.png "")
+![Site Features](documentation/pages/create-post.png "site-features")
 
 ### Edit post page
 * **Features**
@@ -226,9 +226,9 @@
     * From here the user can change all aspects of their post or choose to delete it.
     * On succesfull completion of the edit the user is redirected back to the posts page.
     * If the user clicks the delete button they are directed to the delete confirmation page where they can choose to perminantly delete their post.
-![](documentation/pages/edit-post-one.png "")
-![](documentation/pages/edit-post-two.png "")
-![](documentation/pages/delete-post.png "")
+![Site Features](documentation/pages/edit-post-one.png "site-features")
+![Site Features](documentation/pages/edit-post-two.png "site-features")
+![Site Features](documentation/pages/delete-post.png "site-features")
 
 ### Settings page
 * **Features**
@@ -237,9 +237,9 @@
     * When clicked the user is directed to the update info page where a pre filled form is generated that the user can edit.
     * Upon succeddfull editing of the user details they are redirected back to the settings page.
     * Their is also a button to allow the user to delete their account that directs the user to the delete account warning page. From here the user can perminantly delete their account and will be logged out and sent back to the landing page.
-![](documentation/pages/settings-page.png "")
-![](documentation/pages/edit-info.png "")
-![](documentation/pages/delete-account.png "")
+![Site Features](documentation/pages/settings-page.png "site-features")
+![Site Features](documentation/pages/edit-info.png "site-features")
+![Site Features](documentation/pages/delete-account.png "site-features")
 
 ### Posts Features
 * **Features**
@@ -255,8 +255,8 @@
     * A feature was added that only allowed two comments to be seen at a time as to not clutter the screen.
     * A link to view more is added when there are more than two comments that redirects the user to the posts page.
 
-![](documentation/pages/post-description.png "")
-![](documentation/pages/post-description-2.png "")
+![Site Features](documentation/pages/post-description.png "site-features")
+![Site Features](documentation/pages/post-description-2.png "site-features")
 
 ## Testing
 [Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
