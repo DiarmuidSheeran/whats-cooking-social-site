@@ -263,6 +263,7 @@
     * Two custom error pages were added to the site. Each of the error pages will dispay that their has been an error with their request and a link is also displayed that when clicked will redirect the user back to the index page.
 
 ![Site Features](documentation/pages/error-404.png "site-features")
+
 ![Site Features](documentation/pages/error-500.png "site-features")
 
 ## Testing
