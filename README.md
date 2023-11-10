@@ -31,6 +31,11 @@
 * Please not that due to ammendmants throught the project the id numbers are no longer sequenced.
 
 ## Project Design:
+### Flow Chart
+#### I mapped out what I wanted my project to do in a flow chart.
+
+![Flow Chart](documentation/wireframe-digital/flow-chart.png "flow-chart")
+
 ### Wireframes
 #### With the idea for the website planned, I began with drawing out with a pencil the concept idea for some of the different pages within the site.
 * Landing:
