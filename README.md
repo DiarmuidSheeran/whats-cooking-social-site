@@ -1,8 +1,30 @@
 # Whats Cooking Social Site
+### A social platform for food lovers and friends to keep tabs on what they are cooking.
+
 ![Responsive Design](documentation/responsive-design.png "responsive-design")
 #### Click the link below to view the live site:
 * [Whats Cooking Social Site](https://whats-cooking-socail-site-21a4223c5487.herokuapp.com/)
-## Site Description :bowl_with_spoon: 
+
+## Table of Contents
+1. [What's Cooking Social Site](#whats-cooking-social-site)
+2. [Site Description](#site-description)
+3. [Implementing the Agile Approach](#implementing-the-agile-approach)
+4. [Project Design](#project-design)
+   - [Flow Chart](#flow-chart)
+   - [Wireframes](#wireframes)
+   - [Colors](#colors)
+   - [Database](#database)
+5. [Site Look and Features](#site-look-and-features)
+6. [Testing](#testing)
+7. [Technologies Used](#technologies-used) 
+   - [Languages](#languages)
+   - [Frameworks](#frameworks)
+   - [Other Technologies](#other-technologies)
+8. [Deployment](#deployment)
+9. [Credits](#credits)
+10. [Acknowledgements](#acknowledgements)
+
+## Site Description 
 * The goal of Whats Cookin is to be a social media site that puts an emphasis on users to share images of food they have prepared or food they are about to eat. 
 * The site allows users to create their own account, sign in and create their own posts to share on the site.
 * In addition to this users have their own profile pages and can write a bio of themselves for other users to see.
@@ -13,6 +35,10 @@
 * The site contains a recipe search that is connected to an api and allows a user to enter a food type for example, eggs, into the search bar and list of recipes that can be made with eggs is displayed to the user.
 * The user is given control over their own profile with the abillity to create posts, update posts, delete posts, edit their pesronal info, edit their bio, edit their profile picture, and delete their account.
 * The site was created for the Code Institutes PP4 to demonstrate an agile apporach to creating websites and displaying a working knowledge of implementing CRUD functionality to the web application.
+
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
 
 ## Implementing the Agile Approach
 ### To ensure an organized and flexible development process for the "Whats Cooking Social Site" project, I have adopted an Agile methodology. Here are the steps I've taken to implement this approach:
@@ -30,13 +56,23 @@
 [Link to projects user stories](https://github.com/users/DiarmuidSheeran/projects/5/views/1)
 * Please not that due to ammendmants throught the project the id numbers are no longer sequenced.
 
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
 ## Project Design:
 ### Flow Chart
 #### I mapped out what I wanted my project to do in a flow chart.
 
 ![Flow Chart](documentation/wireframe-digital/flow-chart.png "flow-chart")
 
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
 ### Wireframes
+<details> 
+
 #### With the idea for the website planned, I began with drawing out with a pencil the concept idea for some of the different pages within the site.
 * Landing:
 
@@ -99,11 +135,21 @@
 
 ![Profile Wireframe](documentation/wireframe-digital/profile-page.jpg "profile-wireframe")
 
+</details>
+
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
 ### Colors
 
 * I have incorporated a carefully selected color palette throughout the website, aimed at creating a visually appealing design, allowing for a more streamlined and user-friendly experience.
 
 ![Color Pallete](documentation/color/color-pallete.png "color-pallete")
+
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
 
 ### Database
 
@@ -111,7 +157,12 @@
 
 ![Database Schema](documentation/database/schema.jpg "data-base-schema")
 
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
 ## Site Look and Features
+<details>
 
 ### Landing page:
 * **Features**
@@ -166,7 +217,7 @@
     * Within the nav bar the user can choose to log out at anytime and will redirect the user back to the login.
     * To ensure the authenticated user cannot access the landing page and subsequent authentication pages the index page is wrapped within a decorator to ensure the user is redirected back to the index page.
 
-    ### Following page
+    ### Following page :pencil:
 * **Features**
     * The follow feed acts just as the index page does but is a filltered list of paginated posts tailered to the users that the authenticated user follows.
 
@@ -270,11 +321,20 @@
 ![Site Features](documentation/pages/error-404.png "site-features")
 
 ![Site Features](documentation/pages/error-500.png "site-features")
+</details>
+
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
 
 ## Testing
 [Link to TESTING.md file](https://github.com/DiarmuidSheeran/whats-cooking-social-site/blob/main/TESTING.md)
 
-## Technolgies Used:
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
+## Technologies Used:
 ### Languages:
 * HTML5
 * CSS
@@ -285,7 +345,7 @@
 * Django
 * Bootstrap
 
-### Other Technolgies:
+### Other Technologies:
 * [Cloudinary](https://cloudinary.com/)- To host static files
 * [Gitpod](https://www.gitpod.io/)- For writing and test code
 * [GitHub](https://github.com/)- For hosting the source code
@@ -298,7 +358,10 @@
 * [PEP8 linter](https://pep8ci.herokuapp.com/)- Used for validating the python code
 * [Js hint](https://jshint.com/)- Used for validating the javascript code
 * Microsoft Paint was used in the making of the wireframes and responsive design banner
+
+[Back to Top](#table-of-contents)
  
+[Jump to Credits](#credits)
 ## Deployment
 * **Cerate Django app**
     1. Install Django and gunicorn: pip3 install django gunicorn
@@ -375,6 +438,10 @@
     10. Search for your repository select it and click connect
     11. Click manual deployment which deploys the current state of a branch. (DO NOT DEPLOY code with debug turned on) 
 
+[Back to Top](#table-of-contents)
+
+[Jump to Credits](#credits)
+
 ## Credits
 
 1. **Books**
@@ -407,16 +474,19 @@
 4. **Images**
     * [Landing Page Image](https://www.wallpaperflare.com/paprika-pepper-water-splash-veg-vegetable-spice-splashing-wallpaper-aefgk)
 
+[Back to Top](#table-of-contents)
+
 ## Acknowledgements
 
 ### I would like to give a hugh shout out to:
 
-* my mentor Derek McAuley and my course leader Alan Bushell for all of their help throught the project. Their insights, suggestions and help throught the project aided in getting it to the finish line. Thank you
+* my mentor Derek McAuley and my course leader Alan Bushell for all of their help throughout the project. Their insights, suggestions and help throught the project aided in getting it to the finish line. Thank you
 
 ### I would also like to thank:
 
 * any of my friends and family that signed up to the site to test it. Your help has been noted and is much appreciated.
 
+[Back to Top](#table-of-contents)
 
 
 
